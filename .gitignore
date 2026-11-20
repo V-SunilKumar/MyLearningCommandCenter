@@ -1,0 +1,7 @@
+progress/progress.json
+.env
+.env.*
+*.log
+secrets/
+.DS_Store
+Thumbs.db
