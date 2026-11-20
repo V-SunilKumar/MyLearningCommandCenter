@@ -1,5 +1,0 @@
-progress/progress.json
-.env
-.env.*
-*.log
-secrets/
