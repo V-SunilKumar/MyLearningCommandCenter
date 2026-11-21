@@ -1,0 +1,84 @@
+/* Oracle roadmap styles: scoped to .oracle-roadmap-shell; V1.7 dashboard untouched */
+.oracle-roadmap-shell{height:calc(100vh - 160px);min-height:420px;max-height:900px;display:flex;flex-direction:column;overflow:hidden;position:relative}
+.oracle-roadmap-shell h2{flex:0 0 auto;margin:10px 0 14px}
+.or-topline{display:flex;align-items:center;justify-content:space-between;gap:12px;flex:0 0 auto}
+.or-kicker{font-size:10px;letter-spacing:1.8px;color:#38c8e8;font-weight:700}
+.or-back{flex:0 0 auto}
+.or-summary{display:flex;align-items:center;gap:22px;flex:0 0 auto;padding:12px 14px;margin:0 0 12px;border:1px solid rgba(40,174,218,.22);border-radius:10px;background:rgba(3,28,45,.55)}
+.or-summary>div:not(.or-overall-track){display:flex;flex-direction:column;gap:2px;min-width:75px}
+.or-summary strong{font-size:20px;color:#f5fbff}.or-summary span{font-size:10px;color:#91aebe}
+.or-overall-track,.or-mini-progress,.or-module-progress{height:5px;background:#17364a;border-radius:9px;overflow:hidden}
+.or-overall-track{flex:1;min-width:60px}.or-overall-track i,.or-mini-progress i,.or-module-progress i{display:block;height:100%;background:linear-gradient(90deg,#08b9e8,#00e5a0);border-radius:9px}
+.or-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px;flex:0 0 auto}
+.or-search{height:36px;display:flex;align-items:center;gap:8px;min-width:220px;max-width:430px;flex:1;padding:0 11px;border:1px solid #234b62;border-radius:8px;background:#061d2c;color:#8faebe}
+.or-search input{width:100%;border:0;outline:0;background:transparent;color:#eaf7ff;font:inherit;font-size:12px}
+.or-toolbar-actions{display:flex;gap:6px;flex-wrap:wrap}
+.or-small-button{border:1px solid #28536a;background:#092638;color:#b9d6e5;border-radius:7px;padding:7px 10px;font-size:10px;cursor:pointer}
+.or-small-button:hover{border-color:#08b9e8;color:#fff}
+.or-scroll-region{height:100%;min-height:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;scrollbar-gutter:stable;padding:1px 8px 12px 1px;scrollbar-width:thin;scrollbar-color:#1687a9 #092436}
+.or-scroll-region::-webkit-scrollbar{width:10px}.or-scroll-region::-webkit-scrollbar-track{background:#092436;border-radius:10px}.or-scroll-region::-webkit-scrollbar-thumb{background:#1687a9;border:2px solid #092436;border-radius:10px}
+.or-module{margin:0 0 8px;border:1px solid rgba(48,126,158,.35);border-radius:9px;background:rgba(5,28,43,.76);overflow:hidden}
+.or-module-toggle,.or-sub-toggle{width:100%;display:flex;align-items:center;gap:10px;text-align:left;border:0;cursor:pointer;color:#e8f6ff}
+.or-module-toggle{min-height:49px;padding:9px 12px;background:linear-gradient(90deg,rgba(8,50,72,.92),rgba(5,31,48,.9))}
+.or-module-toggle:hover,.or-sub-toggle:hover{background-color:rgba(13,82,111,.45)}
+.or-chevron{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;color:#2ec8ee;font-size:22px;line-height:1;transition:transform .16s}
+.or-chevron.is-open{transform:rotate(90deg)}
+.or-module-number{color:#21c6e9;font-size:12px;font-weight:800;min-width:24px}
+.or-module-title{font-size:12px;font-weight:700;flex:1}
+.or-module-meta,.or-sub-count{font-size:10px;color:#8eabba;white-space:nowrap}
+.or-module-progress{width:76px;flex:0 0 76px}
+.or-submodules{padding:5px 10px 9px 27px}
+.or-submodule{border-bottom:1px solid rgba(65,111,132,.18)}.or-submodule:last-child{border-bottom:0}
+.or-sub-toggle{min-height:39px;padding:7px 8px;background:transparent}
+.or-sub-number{font-size:11px;color:#4ecde9;font-weight:700;min-width:31px}
+.or-sub-title{font-size:11px;color:#d7eaf3;flex:1;font-weight:600}
+.or-mini-progress{width:55px;flex:0 0 55px;height:4px}
+.or-items{padding:2px 8px 8px 35px}
+.or-study-item{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:34px;border-bottom:1px dashed rgba(73,121,143,.16)}
+.or-study-item:last-child{border-bottom:0}
+.or-study-open{display:flex;align-items:center;gap:9px;flex:1;min-width:0;text-align:left;border:0;background:transparent;color:#b9d3df;font-size:11px;padding:7px 3px;cursor:pointer}
+.or-study-open:hover{color:#41d4f4}.or-study-open span:last-child{overflow-wrap:anywhere}
+.or-file-icon{color:#24bddd;font-size:17px}
+.or-status{border:1px solid #315367;border-radius:20px;background:#102b3c;color:#9bb4c2;font-size:9px;padding:4px 8px;white-space:nowrap;cursor:pointer}
+.or-status-learning{border-color:#b18a35;color:#ffd778;background:#332a16}
+.or-status-completed{border-color:#168c6a;color:#69e7b7;background:#0b3028}
+.or-status-revisit{border-color:#9362c7;color:#d0a8ff;background:#2a1c3d}
+.or-empty{font-size:11px;color:#91aebe;padding:8px}
+.or-footer-note{font-size:10px;color:#7896a8;padding:8px 2px 0;flex:0 0 auto}
+.or-back-top{position:absolute;right:25px;bottom:36px;width:35px;height:35px;border:1px solid #1b91b3;border-radius:50%;background:#063149;color:#a9f0ff;font-size:18px;opacity:0;pointer-events:none;transform:translateY(6px);transition:.2s;cursor:pointer}
+.or-back-top.is-visible{opacity:1;pointer-events:auto;transform:none}
+.or-study-page{min-height:0;overflow-y:auto;flex:1;padding:4px 8px 15px 2px;scrollbar-width:thin;scrollbar-color:#1687a9 #092436}
+.or-breadcrumb{font-size:10px;color:#819cac;margin:0 0 12px}
+.or-study-header{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.or-study-page h3{font-size:21px;color:#f3fbff;margin:10px 0}
+.or-study-intro{font-size:12px;line-height:1.7;color:#a9c1ce;max-width:900px}
+.or-learning-sections{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:15px}
+.or-learning-sections section{border:1px solid rgba(51,123,151,.3);border-radius:8px;background:rgba(5,29,44,.6);padding:12px}
+.or-learning-sections h4{font-size:12px;color:#4ed0ed;margin:0 0 7px}
+.or-learning-sections p{font-size:11px;line-height:1.6;color:#a9bfcb;margin:0}
+.or-notes{width:100%;min-height:90px;resize:vertical;background:#061d2c;color:#eaf7ff;border:1px solid #28536a;border-radius:6px;padding:9px;font:inherit;font-size:11px}
+.or-study-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:15px}
+.or-status-select{display:flex;align-items:center;gap:8px;color:#9fb8c6;font-size:11px}
+.or-status-select select{background:#0a293c;color:#eaf7ff;border:1px solid #315b70;border-radius:6px;padding:7px}
+.or-error{padding:18px;border:1px solid #8a583b;background:#2d211b;border-radius:8px;color:#ffe0c7}
+.or-error p{font-size:12px;line-height:1.6}
+@media(max-width:800px){.oracle-roadmap-shell{height:calc(100vh - 135px);min-height:380px}.or-toolbar{align-items:stretch;flex-direction:column}.or-search{max-width:none}.or-summary{gap:12px;flex-wrap:wrap}.or-overall-track{flex-basis:100%}.or-learning-sections{grid-template-columns:1fr}.or-module-meta{display:none}.or-module-progress{width:48px;flex-basis:48px}}
+@media(max-width:520px){.oracle-roadmap-shell{padding:12px}.or-module-toggle{gap:6px;padding:8px}.or-module-title{font-size:11px}.or-submodules{padding-left:10px}.or-items{padding-left:18px}.or-sub-count{display:none}.or-mini-progress{width:35px;flex-basis:35px}.or-status{font-size:8px;padding:3px 6px}}
+
+/* V4: low-level completion checklist */
+.or-completion-check{position:relative;display:inline-flex;align-items:center;justify-content:center;flex:0 0 19px;width:19px;height:19px;margin:0 2px;cursor:pointer}
+.or-completion-check input{position:absolute;inset:0;width:19px;height:19px;margin:0;opacity:0;cursor:pointer}
+.or-checkmark{width:16px;height:16px;border:1.5px solid #4c829a;border-radius:4px;background:#071f30;display:block;transition:background .15s,border-color .15s}
+.or-completion-check input:checked + .or-checkmark{background:#00b985;border-color:#00e5a0}
+.or-completion-check input:checked + .or-checkmark:after{content:"";display:block;width:4px;height:8px;border:solid #042b28;border-width:0 2px 2px 0;transform:rotate(45deg);margin:1px 0 0 5px}
+.or-completion-check input:focus-visible + .or-checkmark{outline:2px solid #4ed0ed;outline-offset:2px}
+.or-study-item:has(.or-completion-check input:checked) .or-study-open{color:#7ddbbd}
+
+/* V5: low-level completion checklist */
+.or-completion-check{position:relative;display:inline-flex;align-items:center;justify-content:center;flex:0 0 19px;width:19px;height:19px;margin:0 2px;cursor:pointer}
+.or-completion-check input{position:absolute;inset:0;width:19px;height:19px;margin:0;opacity:0;cursor:pointer}
+.or-checkmark{width:16px;height:16px;border:1.5px solid #4c829a;border-radius:4px;background:#071f30;display:block;transition:background .15s,border-color .15s}
+.or-completion-check input:checked + .or-checkmark{background:#00b985;border-color:#00e5a0}
+.or-completion-check input:checked + .or-checkmark:after{content:"";display:block;width:4px;height:8px;border:solid #042b28;border-width:0 2px 2px 0;transform:rotate(45deg);margin:1px 0 0 5px}
+.or-completion-check input:focus-visible + .or-checkmark{outline:2px solid #4ed0ed;outline-offset:2px}
+.or-study-item:has(.or-completion-check input:checked) .or-study-open{color:#7ddbbd}

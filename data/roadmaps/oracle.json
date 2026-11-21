@@ -1,0 +1,5458 @@
+{
+  "schemaVersion": 1,
+  "technologyId": "oracle",
+  "technologyName": "Oracle Database",
+  "title": "Oracle Database Roadmap",
+  "baseline": "Oracle Database 19c primary; include relevant 11g/12c and newer-release differences.",
+  "numbering": {
+    "module": "Two-digit number",
+    "submodule": "Module number plus decimal sequence",
+    "studyItem": "No visible number; stable internal ID only"
+  },
+  "modules": [
+    {
+      "number": "01",
+      "title": "Oracle Database Fundamentals",
+      "submodules": [
+        {
+          "number": "01.1",
+          "title": "Database Concepts",
+          "items": [
+            {
+              "id": "oracle-01-1-database-fundamentals",
+              "title": "Database fundamentals",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-01-1-relational-database-concepts",
+              "title": "Relational database concepts",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-01-1-tables-rows-columns-and-relationships",
+              "title": "Tables, rows, columns and relationships",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-01-1-keys-and-constraints",
+              "title": "Keys and constraints",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-01-1-acid-properties",
+              "title": "ACID properties",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "01.2",
+          "title": "Oracle Database Overview",
+          "items": [
+            {
+              "id": "oracle-01-2-oracle-database-editions-and-deployment-models",
+              "title": "Oracle Database editions and deployment models",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-01-2-oracle-release-and-version-families",
+              "title": "Oracle release and version families",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-01-2-oracle-architecture-at-a-glance",
+              "title": "Oracle architecture at a glance",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-01-2-licensing-and-support-lifecycle",
+              "title": "Licensing and support lifecycle",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "01.3",
+          "title": "Oracle DBA Foundations",
+          "items": [
+            {
+              "id": "oracle-01-3-dba-roles-and-responsibilities",
+              "title": "DBA roles and responsibilities",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-01-3-development-test-and-production-environments",
+              "title": "Development, test and production environments",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-01-3-change-management-and-operational-controls",
+              "title": "Change management and operational controls",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-01-3-core-dba-daily-workflow",
+              "title": "Core DBA daily workflow",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "02",
+      "title": "Oracle Database Architecture",
+      "submodules": [
+        {
+          "number": "02.1",
+          "title": "Logical Database Architecture",
+          "items": [
+            {
+              "id": "oracle-02-1-database-schema-and-objects",
+              "title": "Database, schema and objects",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-02-1-tablespaces-segments-extents-and-blocks",
+              "title": "Tablespaces, segments, extents and blocks",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-02-1-data-dictionary-and-metadata",
+              "title": "Data dictionary and metadata",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-02-1-logical-storage-relationships",
+              "title": "Logical storage relationships",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "02.2",
+          "title": "Physical Database Architecture",
+          "items": [
+            {
+              "id": "oracle-02-2-datafiles",
+              "title": "Datafiles",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-02-2-control-files",
+              "title": "Control files",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-02-2-online-redo-log-files",
+              "title": "Online redo log files",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-02-2-archived-redo-logs",
+              "title": "Archived redo logs",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-02-2-database-file-relationships",
+              "title": "Database file relationships",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "02.3",
+          "title": "Database and Instance Relationship",
+          "items": [
+            {
+              "id": "oracle-02-3-database-versus-instance",
+              "title": "Database versus instance",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-02-3-single-instance-architecture",
+              "title": "Single-instance architecture",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-02-3-client-server-architecture",
+              "title": "Client-server architecture",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-02-3-instance-to-database-attachment",
+              "title": "Instance-to-database attachment",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "02.4",
+          "title": "Core Processing Architecture",
+          "items": [
+            {
+              "id": "oracle-02-4-sql-processing-lifecycle",
+              "title": "SQL processing lifecycle",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-02-4-transaction-processing-lifecycle",
+              "title": "Transaction processing lifecycle",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-02-4-read-consistency",
+              "title": "Read consistency",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-02-4-commit-processing-and-durability",
+              "title": "Commit processing and durability",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "03",
+      "title": "Oracle Instance Architecture",
+      "submodules": [
+        {
+          "number": "03.1",
+          "title": "Instance Components",
+          "items": [
+            {
+              "id": "oracle-03-1-instance-component-overview",
+              "title": "Instance component overview",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-03-1-system-global-area-sga",
+              "title": "System Global Area (SGA)",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-03-1-program-global-area-pga",
+              "title": "Program Global Area (PGA)",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-03-1-user-processes-and-server-processes",
+              "title": "User processes and server processes",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "03.2",
+          "title": "Background Processes",
+          "items": [
+            {
+              "id": "oracle-03-2-database-writer-dbwn",
+              "title": "Database Writer (DBWn)",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-03-2-log-writer-lgwr",
+              "title": "Log Writer (LGWR)",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-03-2-checkpoint-ckpt",
+              "title": "Checkpoint (CKPT)",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-03-2-system-monitor-smon",
+              "title": "System Monitor (SMON)",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-03-2-process-monitor-pmon",
+              "title": "Process Monitor (PMON)",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-03-2-archiver-arcn",
+              "title": "Archiver (ARCn)",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-03-2-other-background-processes",
+              "title": "Other background processes",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "03.3",
+          "title": "Instance Lifecycle",
+          "items": [
+            {
+              "id": "oracle-03-3-nomount-state",
+              "title": "NOMOUNT state",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-03-3-mount-state",
+              "title": "MOUNT state",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-03-3-open-state",
+              "title": "OPEN state",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-03-3-startup-sequence",
+              "title": "Startup sequence",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-03-3-shutdown-modes-and-behavior",
+              "title": "Shutdown modes and behavior",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "03.4",
+          "title": "Instance Internals and Failure",
+          "items": [
+            {
+              "id": "oracle-03-4-process-lifecycle",
+              "title": "Process lifecycle",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-03-4-instance-recovery-overview",
+              "title": "Instance recovery overview",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-03-4-instance-termination",
+              "title": "Instance termination",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-03-4-startup-and-shutdown-troubleshooting",
+              "title": "Startup and shutdown troubleshooting",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "04",
+      "title": "Oracle Memory Architecture",
+      "submodules": [
+        {
+          "number": "04.1",
+          "title": "SGA Components",
+          "items": [
+            {
+              "id": "oracle-04-1-database-buffer-cache",
+              "title": "Database Buffer Cache",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-04-1-shared-pool",
+              "title": "Shared Pool",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-04-1-library-cache",
+              "title": "Library Cache",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-04-1-data-dictionary-cache",
+              "title": "Data Dictionary Cache",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-04-1-redo-log-buffer",
+              "title": "Redo Log Buffer",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-04-1-large-pool",
+              "title": "Large Pool",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-04-1-java-pool",
+              "title": "Java Pool",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-04-1-streams-pool",
+              "title": "Streams Pool",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "04.2",
+          "title": "PGA Architecture",
+          "items": [
+            {
+              "id": "oracle-04-2-pga-components",
+              "title": "PGA components",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-04-2-private-sql-area",
+              "title": "Private SQL area",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-04-2-work-areas",
+              "title": "Work areas",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-04-2-sort-memory",
+              "title": "Sort memory",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-04-2-hash-join-memory",
+              "title": "Hash join memory",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-04-2-pga-aggregate-target",
+              "title": "PGA aggregate target",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "04.3",
+          "title": "Memory Management",
+          "items": [
+            {
+              "id": "oracle-04-3-automatic-shared-memory-management-asmm",
+              "title": "Automatic Shared Memory Management (ASMM)",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-04-3-automatic-memory-management-amm",
+              "title": "Automatic Memory Management (AMM)",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-04-3-manual-memory-management",
+              "title": "Manual memory management",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-04-3-sga-and-pga-parameters",
+              "title": "SGA and PGA parameters",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-04-3-memory-advisor",
+              "title": "Memory advisor",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "04.4",
+          "title": "Memory Diagnostics and Tuning",
+          "items": [
+            {
+              "id": "oracle-04-4-sga-and-pga-usage-analysis",
+              "title": "SGA and PGA usage analysis",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-04-4-memory-pressure-indicators",
+              "title": "Memory pressure indicators",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-04-4-ora-04031-diagnosis",
+              "title": "ORA-04031 diagnosis",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-04-4-pga-workarea-spills",
+              "title": "PGA workarea spills",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-04-4-production-memory-tuning",
+              "title": "Production memory tuning",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "05",
+      "title": "Oracle Storage Architecture",
+      "submodules": [
+        {
+          "number": "05.1",
+          "title": "Blocks, Extents and Segments",
+          "items": [
+            {
+              "id": "oracle-05-1-oracle-data-block-structure",
+              "title": "Oracle data block structure",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-05-1-block-header-and-row-directory",
+              "title": "Block header and row directory",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-05-1-extent-allocation",
+              "title": "Extent allocation",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-05-1-segment-types",
+              "title": "Segment types",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-05-1-high-water-mark",
+              "title": "High Water Mark",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "05.2",
+          "title": "Tablespace Administration",
+          "items": [
+            {
+              "id": "oracle-05-2-permanent-tablespaces",
+              "title": "Permanent tablespaces",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-05-2-temporary-tablespaces",
+              "title": "Temporary tablespaces",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-05-2-undo-tablespaces",
+              "title": "Undo tablespaces",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-05-2-bigfile-and-smallfile-tablespaces",
+              "title": "Bigfile and smallfile tablespaces",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-05-2-locally-managed-tablespaces",
+              "title": "Locally managed tablespaces",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-05-2-autoextend-and-quotas",
+              "title": "Autoextend and quotas",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "05.3",
+          "title": "Datafile and Tempfile Management",
+          "items": [
+            {
+              "id": "oracle-05-3-datafile-creation-and-resizing",
+              "title": "Datafile creation and resizing",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-05-3-adding-and-moving-datafiles",
+              "title": "Adding and moving datafiles",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-05-3-tempfile-administration",
+              "title": "Tempfile administration",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-05-3-datafile-offline-and-online",
+              "title": "Datafile offline and online",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-05-3-datafile-recovery-considerations",
+              "title": "Datafile recovery considerations",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "05.4",
+          "title": "Advanced Space Management",
+          "items": [
+            {
+              "id": "oracle-05-4-automatic-segment-space-management-assm",
+              "title": "Automatic Segment Space Management (ASSM)",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-05-4-free-space-and-fragmentation",
+              "title": "Free space and fragmentation",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-05-4-segment-advisor",
+              "title": "Segment Advisor",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-05-4-lob-storage",
+              "title": "LOB storage",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-05-4-capacity-planning-and-growth-forecasting",
+              "title": "Capacity planning and growth forecasting",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "06",
+      "title": "Oracle Redo, Undo and Transaction Architecture",
+      "submodules": [
+        {
+          "number": "06.1",
+          "title": "Transaction Architecture",
+          "items": [
+            {
+              "id": "oracle-06-1-transaction-lifecycle",
+              "title": "Transaction lifecycle",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-06-1-commit-and-rollback",
+              "title": "Commit and rollback",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-06-1-transaction-ids",
+              "title": "Transaction IDs",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-06-1-read-consistency",
+              "title": "Read consistency",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-06-1-scn-fundamentals",
+              "title": "SCN fundamentals",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "06.2",
+          "title": "Redo Architecture",
+          "items": [
+            {
+              "id": "oracle-06-2-redo-generation",
+              "title": "Redo generation",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-06-2-redo-log-buffer",
+              "title": "Redo Log Buffer",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-06-2-online-redo-log-groups-and-members",
+              "title": "Online redo log groups and members",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-06-2-log-switches",
+              "title": "Log switches",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-06-2-archived-redo-logs",
+              "title": "Archived redo logs",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-06-2-redo-transport-overview",
+              "title": "Redo transport overview",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "06.3",
+          "title": "Undo Architecture",
+          "items": [
+            {
+              "id": "oracle-06-3-undo-segments",
+              "title": "Undo segments",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-06-3-undo-tablespace",
+              "title": "Undo tablespace",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-06-3-undo-retention",
+              "title": "Undo retention",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-06-3-read-consistency-using-undo",
+              "title": "Read consistency using undo",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-06-3-ora-01555",
+              "title": "ORA-01555",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-06-3-undo-space-troubleshooting",
+              "title": "Undo space troubleshooting",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "06.4",
+          "title": "Checkpoint and Recovery Internals",
+          "items": [
+            {
+              "id": "oracle-06-4-checkpoint-processing",
+              "title": "Checkpoint processing",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-06-4-instance-recovery",
+              "title": "Instance recovery",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-06-4-redo-and-undo-during-recovery",
+              "title": "Redo and undo during recovery",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-06-4-fast-start-recovery",
+              "title": "Fast-start recovery",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-06-4-recovery-related-waits",
+              "title": "Recovery-related waits",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "07",
+      "title": "Oracle SQL for DBAs",
+      "submodules": [
+        {
+          "number": "07.1",
+          "title": "SQL Fundamentals",
+          "items": [
+            {
+              "id": "oracle-07-1-select-and-filtering",
+              "title": "SELECT and filtering",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-07-1-joins",
+              "title": "Joins",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-07-1-subqueries",
+              "title": "Subqueries",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-07-1-set-operators",
+              "title": "Set operators",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-07-1-dml-and-transaction-control",
+              "title": "DML and transaction control",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-07-1-ddl-essentials",
+              "title": "DDL essentials",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "07.2",
+          "title": "Advanced SQL",
+          "items": [
+            {
+              "id": "oracle-07-2-analytic-functions",
+              "title": "Analytic functions",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-07-2-common-table-expressions",
+              "title": "Common table expressions",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-07-2-hierarchical-queries",
+              "title": "Hierarchical queries",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-07-2-pivot-and-unpivot",
+              "title": "PIVOT and UNPIVOT",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-07-2-merge",
+              "title": "MERGE",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-07-2-advanced-aggregation",
+              "title": "Advanced aggregation",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "07.3",
+          "title": "SQL Execution and Optimization",
+          "items": [
+            {
+              "id": "oracle-07-3-parsing-and-execution",
+              "title": "Parsing and execution",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-07-3-hard-parse-and-soft-parse",
+              "title": "Hard parse and soft parse",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-07-3-bind-variables",
+              "title": "Bind variables",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-07-3-cursor-sharing",
+              "title": "Cursor sharing",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-07-3-optimizer-fundamentals",
+              "title": "Optimizer fundamentals",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-07-3-dynamic-sql",
+              "title": "Dynamic SQL",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "07.4",
+          "title": "SQL Diagnostics",
+          "items": [
+            {
+              "id": "oracle-07-4-execution-plans",
+              "title": "Execution plans",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-07-4-dbms-xplan",
+              "title": "DBMS_XPLAN",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-07-4-sql-monitor",
+              "title": "SQL Monitor",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-07-4-sql-trace",
+              "title": "SQL trace",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-07-4-tkprof",
+              "title": "TKPROF",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-07-4-sql-performance-evidence-collection",
+              "title": "SQL performance evidence collection",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "08",
+      "title": "Oracle PL/SQL for DBAs",
+      "submodules": [
+        {
+          "number": "08.1",
+          "title": "PL/SQL Fundamentals",
+          "items": [
+            {
+              "id": "oracle-08-1-pl-sql-block-structure",
+              "title": "PL/SQL block structure",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-08-1-variables-and-data-types",
+              "title": "Variables and data types",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-08-1-control-structures",
+              "title": "Control structures",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-08-1-cursors",
+              "title": "Cursors",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-08-1-records-and-collections",
+              "title": "Records and collections",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "08.2",
+          "title": "Program Units",
+          "items": [
+            {
+              "id": "oracle-08-2-procedures",
+              "title": "Procedures",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-08-2-functions",
+              "title": "Functions",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-08-2-packages-and-package-state",
+              "title": "Packages and package state",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-08-2-triggers",
+              "title": "Triggers",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-08-2-stored-program-dependencies",
+              "title": "Stored program dependencies",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "08.3",
+          "title": "Advanced PL/SQL",
+          "items": [
+            {
+              "id": "oracle-08-3-exception-handling",
+              "title": "Exception handling",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-08-3-bulk-collect",
+              "title": "Bulk Collect",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-08-3-forall",
+              "title": "FORALL",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-08-3-dynamic-pl-sql",
+              "title": "Dynamic PL/SQL",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-08-3-pipelined-functions",
+              "title": "Pipelined functions",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-08-3-autonomous-transactions",
+              "title": "Autonomous transactions",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "08.4",
+          "title": "PL/SQL Operations and Performance",
+          "items": [
+            {
+              "id": "oracle-08-4-compilation-and-debugging",
+              "title": "Compilation and debugging",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-08-4-invalid-objects",
+              "title": "Invalid objects",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-08-4-dependency-management",
+              "title": "Dependency management",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-08-4-pl-sql-profiling",
+              "title": "PL/SQL profiling",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-08-4-native-compilation-considerations",
+              "title": "Native compilation considerations",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "09",
+      "title": "Oracle Database Installation and Configuration",
+      "submodules": [
+        {
+          "number": "09.1",
+          "title": "Installation Planning",
+          "items": [
+            {
+              "id": "oracle-09-1-hardware-and-software-prerequisites",
+              "title": "Hardware and software prerequisites",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-09-1-operating-system-requirements",
+              "title": "Operating system requirements",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-09-1-kernel-and-package-prerequisites",
+              "title": "Kernel and package prerequisites",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-09-1-storage-and-filesystem-planning",
+              "title": "Storage and filesystem planning",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-09-1-installation-user-and-groups",
+              "title": "Installation user and groups",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "09.2",
+          "title": "Oracle Software Installation",
+          "items": [
+            {
+              "id": "oracle-09-2-oracle-universal-installer",
+              "title": "Oracle Universal Installer",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-09-2-silent-installation",
+              "title": "Silent installation",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-09-2-response-files",
+              "title": "Response files",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-09-2-central-inventory",
+              "title": "Central inventory",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-09-2-software-homes-and-environment",
+              "title": "Software homes and environment",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "09.3",
+          "title": "Database Creation",
+          "items": [
+            {
+              "id": "oracle-09-3-dbca-graphical-workflow",
+              "title": "DBCA graphical workflow",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-09-3-dbca-silent-workflow",
+              "title": "DBCA silent workflow",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-09-3-manual-create-database",
+              "title": "Manual CREATE DATABASE",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-09-3-cdb-creation",
+              "title": "CDB creation",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-09-3-database-templates",
+              "title": "Database templates",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "09.4",
+          "title": "Post-Installation Configuration",
+          "items": [
+            {
+              "id": "oracle-09-4-environment-configuration",
+              "title": "Environment configuration",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-09-4-listener-and-service-setup",
+              "title": "Listener and service setup",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-09-4-database-configuration-assistant-tasks",
+              "title": "Database configuration assistant tasks",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-09-4-component-validation",
+              "title": "Component validation",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-09-4-installation-troubleshooting",
+              "title": "Installation troubleshooting",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "10",
+      "title": "Oracle Database Administration",
+      "submodules": [
+        {
+          "number": "10.1",
+          "title": "Database Lifecycle Operations",
+          "items": [
+            {
+              "id": "oracle-10-1-startup-and-shutdown-administration",
+              "title": "Startup and shutdown administration",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-10-1-database-open-modes",
+              "title": "Database open modes",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-10-1-restricted-session",
+              "title": "Restricted session",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-10-1-read-only-and-read-write-modes",
+              "title": "Read-only and read-write modes",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-10-1-database-role-and-state-checks",
+              "title": "Database role and state checks",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "10.2",
+          "title": "Configuration Management",
+          "items": [
+            {
+              "id": "oracle-10-2-pfile-and-spfile",
+              "title": "PFILE and SPFILE",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-10-2-initialization-parameters",
+              "title": "Initialization parameters",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-10-2-scope-and-persistence",
+              "title": "Scope and persistence",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-10-2-parameter-change-planning",
+              "title": "Parameter change planning",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-10-2-configuration-drift",
+              "title": "Configuration drift",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "10.3",
+          "title": "Object and Space Administration",
+          "items": [
+            {
+              "id": "oracle-10-3-tables-and-indexes-administration",
+              "title": "Tables and indexes administration",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-10-3-views-and-sequences",
+              "title": "Views and sequences",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-10-3-object-maintenance",
+              "title": "Object maintenance",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-10-3-tablespace-administration",
+              "title": "Tablespace administration",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-10-3-schema-object-health",
+              "title": "Schema object health",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "10.4",
+          "title": "Routine Operational Maintenance",
+          "items": [
+            {
+              "id": "oracle-10-4-daily-weekly-and-monthly-dba-checks",
+              "title": "Daily, weekly and monthly DBA checks",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-10-4-invalid-object-maintenance",
+              "title": "Invalid object maintenance",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-10-4-statistics-maintenance",
+              "title": "Statistics maintenance",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-10-4-space-monitoring",
+              "title": "Space monitoring",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-10-4-operational-checklists",
+              "title": "Operational checklists",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "11",
+      "title": "Oracle User, Schema and Security Management",
+      "submodules": [
+        {
+          "number": "11.1",
+          "title": "User and Schema Management",
+          "items": [
+            {
+              "id": "oracle-11-1-user-creation-and-alteration",
+              "title": "User creation and alteration",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-11-1-schema-ownership",
+              "title": "Schema ownership",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-11-1-password-management",
+              "title": "Password management",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-11-1-profiles-and-password-policies",
+              "title": "Profiles and password policies",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-11-1-account-lock-and-expiry",
+              "title": "Account lock and expiry",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "11.2",
+          "title": "Privilege and Role Management",
+          "items": [
+            {
+              "id": "oracle-11-2-system-privileges",
+              "title": "System privileges",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-11-2-object-privileges",
+              "title": "Object privileges",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-11-2-roles-and-nested-roles",
+              "title": "Roles and nested roles",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-11-2-default-roles",
+              "title": "Default roles",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-11-2-privilege-auditing",
+              "title": "Privilege auditing",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-11-2-least-privilege",
+              "title": "Least privilege",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "11.3",
+          "title": "Access and Authentication",
+          "items": [
+            {
+              "id": "oracle-11-3-database-authentication",
+              "title": "Database authentication",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-11-3-operating-system-authentication",
+              "title": "Operating system authentication",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-11-3-password-file-authentication",
+              "title": "Password file authentication",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-11-3-external-authentication-overview",
+              "title": "External authentication overview",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-11-3-proxy-authentication",
+              "title": "Proxy authentication",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "11.4",
+          "title": "Schema Operations",
+          "items": [
+            {
+              "id": "oracle-11-4-tablespace-quotas",
+              "title": "Tablespace quotas",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-11-4-schema-refresh-considerations",
+              "title": "Schema refresh considerations",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-11-4-object-ownership-and-grants",
+              "title": "Object ownership and grants",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-11-4-dependency-validation",
+              "title": "Dependency validation",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-11-4-schema-level-security-review",
+              "title": "Schema-level security review",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "12",
+      "title": "Oracle Networking and Connectivity",
+      "submodules": [
+        {
+          "number": "12.1",
+          "title": "Oracle Net Architecture",
+          "items": [
+            {
+              "id": "oracle-12-1-oracle-net-services",
+              "title": "Oracle Net Services",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-12-1-listener-architecture",
+              "title": "Listener architecture",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-12-1-sid-and-service-name",
+              "title": "SID and service name",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-12-1-local-and-remote-connections",
+              "title": "Local and remote connections",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-12-1-dedicated-and-shared-server",
+              "title": "Dedicated and shared server",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "12.2",
+          "title": "Network Configuration",
+          "items": [
+            {
+              "id": "oracle-12-2-listener-ora",
+              "title": "listener.ora",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-12-2-tnsnames-ora",
+              "title": "tnsnames.ora",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-12-2-sqlnet-ora",
+              "title": "sqlnet.ora",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-12-2-naming-methods",
+              "title": "Naming methods",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-12-2-listener-registration",
+              "title": "Listener registration",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-12-2-multiple-listener-configuration",
+              "title": "Multiple listener configuration",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "12.3",
+          "title": "Connectivity Administration",
+          "items": [
+            {
+              "id": "oracle-12-3-dynamic-service-registration",
+              "title": "Dynamic service registration",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-12-3-static-registration",
+              "title": "Static registration",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-12-3-service-management",
+              "title": "Service management",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-12-3-connection-load-balancing",
+              "title": "Connection load balancing",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-12-3-connection-pooling-concepts",
+              "title": "Connection pooling concepts",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "12.4",
+          "title": "Network Troubleshooting",
+          "items": [
+            {
+              "id": "oracle-12-4-tns-12154-diagnosis",
+              "title": "TNS-12154 diagnosis",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-12-4-tns-12514-diagnosis",
+              "title": "TNS-12514 diagnosis",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-12-4-tns-12541-diagnosis",
+              "title": "TNS-12541 diagnosis",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-12-4-listener-log-analysis",
+              "title": "Listener log analysis",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-12-4-tnsping-and-sql-plus-evidence",
+              "title": "tnsping and SQL*Plus evidence",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-12-4-firewall-and-port-checks",
+              "title": "Firewall and port checks",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "13",
+      "title": "Oracle Job Scheduling and Database Scheduling",
+      "submodules": [
+        {
+          "number": "13.1",
+          "title": "Scheduler Architecture",
+          "items": [
+            {
+              "id": "oracle-13-1-dbms-scheduler-architecture",
+              "title": "DBMS_SCHEDULER architecture",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-13-1-jobs-and-programs",
+              "title": "Jobs and programs",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-13-1-schedules-and-windows",
+              "title": "Schedules and windows",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-13-1-job-classes",
+              "title": "Job classes",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-13-1-credentials-and-destinations",
+              "title": "Credentials and destinations",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "13.2",
+          "title": "Job Administration",
+          "items": [
+            {
+              "id": "oracle-13-2-create-and-manage-jobs",
+              "title": "Create and manage jobs",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-13-2-pl-sql-and-executable-jobs",
+              "title": "PL/SQL and executable jobs",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-13-2-chains-and-dependencies",
+              "title": "Chains and dependencies",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-13-2-job-attributes",
+              "title": "Job attributes",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-13-2-legacy-dbms-job",
+              "title": "Legacy DBMS_JOB",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "13.3",
+          "title": "Job Monitoring and Troubleshooting",
+          "items": [
+            {
+              "id": "oracle-13-3-job-run-details",
+              "title": "Job run details",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-13-3-scheduler-logs",
+              "title": "Scheduler logs",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-13-3-failed-job-diagnosis",
+              "title": "Failed job diagnosis",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-13-3-credential-failures",
+              "title": "Credential failures",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-13-3-window-and-resource-issues",
+              "title": "Window and resource issues",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "13.4",
+          "title": "Scheduling Practices",
+          "items": [
+            {
+              "id": "oracle-13-4-maintenance-windows",
+              "title": "Maintenance windows",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-13-4-scheduler-resource-management",
+              "title": "Scheduler resource management",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-13-4-deployment-of-jobs",
+              "title": "Deployment of jobs",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-13-4-operational-scheduling-standards",
+              "title": "Operational scheduling standards",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-13-4-job-migration-from-dbms-job",
+              "title": "Job migration from DBMS_JOB",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "14",
+      "title": "Oracle Monitoring and Diagnostics",
+      "submodules": [
+        {
+          "number": "14.1",
+          "title": "Monitoring Data Sources",
+          "items": [
+            {
+              "id": "oracle-14-1-dynamic-performance-views",
+              "title": "Dynamic performance views",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-14-1-data-dictionary-views",
+              "title": "Data dictionary views",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-14-1-fixed-tables-and-x-views",
+              "title": "Fixed tables and X$ views",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-14-1-gv-versus-v-views",
+              "title": "GV$ versus V$ views",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-14-1-container-aware-views",
+              "title": "Container-aware views",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "14.2",
+          "title": "Workload Diagnostics",
+          "items": [
+            {
+              "id": "oracle-14-2-automatic-workload-repository-awr",
+              "title": "Automatic Workload Repository (AWR)",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-14-2-active-session-history-ash",
+              "title": "Active Session History (ASH)",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-14-2-automatic-database-diagnostic-monitor-addm",
+              "title": "Automatic Database Diagnostic Monitor (ADDM)",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-14-2-snapshots-and-baselines",
+              "title": "Snapshots and baselines",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-14-2-diagnostic-licensing-considerations",
+              "title": "Diagnostic licensing considerations",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "14.3",
+          "title": "Diagnostic Infrastructure",
+          "items": [
+            {
+              "id": "oracle-14-3-automatic-diagnostic-repository-adr",
+              "title": "Automatic Diagnostic Repository (ADR)",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-14-3-alert-log",
+              "title": "Alert log",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-14-3-trace-files",
+              "title": "Trace files",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-14-3-incident-packaging",
+              "title": "Incident packaging",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-14-3-health-monitor",
+              "title": "Health Monitor",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "14.4",
+          "title": "Monitoring Practice",
+          "items": [
+            {
+              "id": "oracle-14-4-database-health-indicators",
+              "title": "Database health indicators",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-14-4-thresholds-and-baselines",
+              "title": "Thresholds and baselines",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-14-4-wait-event-analysis",
+              "title": "Wait event analysis",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-14-4-evidence-collection",
+              "title": "Evidence collection",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-14-4-monitoring-strategy-and-alert-design",
+              "title": "Monitoring strategy and alert design",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "15",
+      "title": "Oracle RMAN Backup and Recovery",
+      "submodules": [
+        {
+          "number": "15.1",
+          "title": "RMAN Architecture",
+          "items": [
+            {
+              "id": "oracle-15-1-rman-components",
+              "title": "RMAN components",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-15-1-target-and-recovery-catalog",
+              "title": "Target and recovery catalog",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-15-1-control-file-repository",
+              "title": "Control file repository",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-15-1-backup-sets-and-image-copies",
+              "title": "Backup sets and image copies",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-15-1-channels-and-devices",
+              "title": "Channels and devices",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "15.2",
+          "title": "Backup Operations",
+          "items": [
+            {
+              "id": "oracle-15-2-full-backups",
+              "title": "Full backups",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-15-2-incremental-backups",
+              "title": "Incremental backups",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-15-2-archived-redo-log-backups",
+              "title": "Archived redo log backups",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-15-2-control-file-and-spfile-backups",
+              "title": "Control file and SPFILE backups",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-15-2-compression-and-encryption",
+              "title": "Compression and encryption",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-15-2-backup-optimization",
+              "title": "Backup optimization",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "15.3",
+          "title": "Restore and Recovery",
+          "items": [
+            {
+              "id": "oracle-15-3-restore-and-recover-workflow",
+              "title": "Restore and recover workflow",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-15-3-datafile-recovery",
+              "title": "Datafile recovery",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-15-3-control-file-recovery",
+              "title": "Control file recovery",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-15-3-complete-recovery",
+              "title": "Complete recovery",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-15-3-incomplete-recovery",
+              "title": "Incomplete recovery",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-15-3-point-in-time-recovery",
+              "title": "Point-in-time recovery",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "15.4",
+          "title": "Advanced RMAN and Validation",
+          "items": [
+            {
+              "id": "oracle-15-4-duplicate-database",
+              "title": "Duplicate database",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-15-4-block-media-recovery",
+              "title": "Block media recovery",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-15-4-crosscheck-and-catalog",
+              "title": "Crosscheck and catalog",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-15-4-backup-validation-and-restore-preview",
+              "title": "Backup validation and restore preview",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-15-4-recovery-catalog-maintenance",
+              "title": "Recovery catalog maintenance",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-15-4-disaster-recovery-exercises",
+              "title": "Disaster recovery exercises",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "16",
+      "title": "Oracle Flashback Technologies",
+      "submodules": [
+        {
+          "number": "16.1",
+          "title": "Flashback Architecture",
+          "items": [
+            {
+              "id": "oracle-16-1-flashback-technology-overview",
+              "title": "Flashback technology overview",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-16-1-undo-based-flashback",
+              "title": "Undo-based flashback",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-16-1-flashback-logs",
+              "title": "Flashback logs",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-16-1-flashback-prerequisites-and-retention",
+              "title": "Flashback prerequisites and retention",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "16.2",
+          "title": "Object-Level Flashback",
+          "items": [
+            {
+              "id": "oracle-16-2-flashback-query",
+              "title": "Flashback Query",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-16-2-flashback-versions-query",
+              "title": "Flashback Versions Query",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-16-2-flashback-transaction-query",
+              "title": "Flashback Transaction Query",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-16-2-flashback-table",
+              "title": "Flashback Table",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-16-2-flashback-drop",
+              "title": "Flashback Drop",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "16.3",
+          "title": "Database-Level Flashback",
+          "items": [
+            {
+              "id": "oracle-16-3-flashback-database",
+              "title": "Flashback Database",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-16-3-restore-points",
+              "title": "Restore points",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-16-3-guaranteed-restore-points",
+              "title": "Guaranteed restore points",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-16-3-fast-recovery-area-requirements",
+              "title": "Fast recovery area requirements",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "16.4",
+          "title": "Flashback Operations and Troubleshooting",
+          "items": [
+            {
+              "id": "oracle-16-4-enable-and-disable-flashback",
+              "title": "Enable and disable flashback",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-16-4-space-and-retention-management",
+              "title": "Space and retention management",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-16-4-flashback-failure-diagnosis",
+              "title": "Flashback failure diagnosis",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-16-4-recovery-use-cases-and-limitations",
+              "title": "Recovery use cases and limitations",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "17",
+      "title": "Oracle Performance Tuning and Optimization",
+      "submodules": [
+        {
+          "number": "17.1",
+          "title": "Performance Fundamentals",
+          "items": [
+            {
+              "id": "oracle-17-1-db-time-and-workload",
+              "title": "DB time and workload",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-17-1-wait-events-and-wait-classes",
+              "title": "Wait events and wait classes",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-17-1-performance-baselines",
+              "title": "Performance baselines",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-17-1-bottleneck-identification",
+              "title": "Bottleneck identification",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-17-1-time-model-statistics",
+              "title": "Time model statistics",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "17.2",
+          "title": "SQL Performance Tuning",
+          "items": [
+            {
+              "id": "oracle-17-2-execution-plan-analysis",
+              "title": "Execution plan analysis",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-17-2-optimizer-statistics",
+              "title": "Optimizer statistics",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-17-2-cardinality-and-selectivity",
+              "title": "Cardinality and selectivity",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-17-2-index-access-paths",
+              "title": "Index access paths",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-17-2-sql-tuning-workflow",
+              "title": "SQL tuning workflow",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-17-2-sql-tuning-advisor",
+              "title": "SQL Tuning Advisor",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "17.3",
+          "title": "Instance and I/O Tuning",
+          "items": [
+            {
+              "id": "oracle-17-3-sga-and-pga-tuning",
+              "title": "SGA and PGA tuning",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-17-3-buffer-cache-behavior",
+              "title": "Buffer cache behavior",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-17-3-redo-performance",
+              "title": "Redo performance",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-17-3-i-o-latency-and-throughput",
+              "title": "I/O latency and throughput",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-17-3-latch-and-mutex-analysis",
+              "title": "Latch and mutex analysis",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "17.4",
+          "title": "Advanced Optimizer and Plan Management",
+          "items": [
+            {
+              "id": "oracle-17-4-sql-plan-management",
+              "title": "SQL Plan Management",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-17-4-sql-plan-baselines",
+              "title": "SQL Plan Baselines",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-17-4-sql-profiles",
+              "title": "SQL Profiles",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-17-4-sql-patches",
+              "title": "SQL Patches",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-17-4-adaptive-query-optimization",
+              "title": "Adaptive query optimization",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-17-4-plan-stability",
+              "title": "Plan stability",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "17.5",
+          "title": "Production Performance Scenarios",
+          "items": [
+            {
+              "id": "oracle-17-5-high-cpu-diagnosis",
+              "title": "High CPU diagnosis",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-17-5-i-o-bottlenecks",
+              "title": "I/O bottlenecks",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-17-5-memory-pressure",
+              "title": "Memory pressure",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-17-5-concurrency-contention",
+              "title": "Concurrency contention",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-17-5-rac-performance-considerations",
+              "title": "RAC performance considerations",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-17-5-performance-incident-methodology",
+              "title": "Performance incident methodology",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "18",
+      "title": "Oracle Concurrency, Locks and Transaction Troubleshooting",
+      "submodules": [
+        {
+          "number": "18.1",
+          "title": "Locking Architecture",
+          "items": [
+            {
+              "id": "oracle-18-1-enqueues",
+              "title": "Enqueues",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-18-1-tx-and-tm-locks",
+              "title": "TX and TM locks",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-18-1-row-level-locking",
+              "title": "Row-level locking",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-18-1-latches-and-mutexes",
+              "title": "Latches and mutexes",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-18-1-interested-transaction-list-itl",
+              "title": "Interested Transaction List (ITL)",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "18.2",
+          "title": "Blocking and Deadlock Diagnosis",
+          "items": [
+            {
+              "id": "oracle-18-2-blocking-sessions",
+              "title": "Blocking sessions",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-18-2-blocking-chains",
+              "title": "Blocking chains",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-18-2-deadlocks",
+              "title": "Deadlocks",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-18-2-long-running-transactions",
+              "title": "Long-running transactions",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-18-2-lock-monitoring-views",
+              "title": "Lock monitoring views",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "18.3",
+          "title": "Concurrency and Contention",
+          "items": [
+            {
+              "id": "oracle-18-3-hot-blocks",
+              "title": "Hot blocks",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-18-3-index-contention",
+              "title": "Index contention",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-18-3-itl-waits",
+              "title": "ITL waits",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-18-3-library-cache-contention",
+              "title": "Library cache contention",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-18-3-buffer-busy-waits",
+              "title": "Buffer busy waits",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-18-3-concurrency-wait-analysis",
+              "title": "Concurrency wait analysis",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "18.4",
+          "title": "Safe Resolution and Prevention",
+          "items": [
+            {
+              "id": "oracle-18-4-session-termination-risks",
+              "title": "Session termination risks",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-18-4-transaction-rollback-impact",
+              "title": "Transaction rollback impact",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-18-4-safe-remediation",
+              "title": "Safe remediation",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-18-4-application-coordination",
+              "title": "Application coordination",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-18-4-root-cause-analysis-and-prevention",
+              "title": "Root-cause analysis and prevention",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "19",
+      "title": "Oracle Grid Infrastructure and Clusterware",
+      "submodules": [
+        {
+          "number": "19.1",
+          "title": "Grid Infrastructure Fundamentals",
+          "items": [
+            {
+              "id": "oracle-19-1-grid-infrastructure-architecture",
+              "title": "Grid Infrastructure architecture",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-19-1-oracle-clusterware-components",
+              "title": "Oracle Clusterware components",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-19-1-oracle-restart-architecture",
+              "title": "Oracle Restart architecture",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-19-1-installation-prerequisites",
+              "title": "Installation prerequisites",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "19.2",
+          "title": "Clusterware Internals",
+          "items": [
+            {
+              "id": "oracle-19-2-ohas-stack",
+              "title": "OHAS stack",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-19-2-crs-stack",
+              "title": "CRS stack",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-19-2-voting-disks",
+              "title": "Voting disks",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-19-2-oracle-cluster-registry-ocr",
+              "title": "Oracle Cluster Registry (OCR)",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-19-2-cluster-synchronization-services",
+              "title": "Cluster synchronization services",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "19.3",
+          "title": "Resource and Service Management",
+          "items": [
+            {
+              "id": "oracle-19-3-cluster-resources",
+              "title": "Cluster resources",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-19-3-resource-profiles",
+              "title": "Resource profiles",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-19-3-server-pools",
+              "title": "Server pools",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-19-3-resource-dependencies",
+              "title": "Resource dependencies",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-19-3-policy-managed-and-administrator-managed-concepts",
+              "title": "Policy-managed and administrator-managed concepts",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "19.4",
+          "title": "Administration and Troubleshooting",
+          "items": [
+            {
+              "id": "oracle-19-4-crsctl",
+              "title": "crsctl",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-19-4-srvctl",
+              "title": "srvctl",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-19-4-ocrconfig-and-ocrcheck",
+              "title": "ocrconfig and ocrcheck",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-19-4-clusterware-logs",
+              "title": "Clusterware logs",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-19-4-resource-state-diagnosis",
+              "title": "Resource state diagnosis",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-19-4-cluster-startup-and-shutdown-troubleshooting",
+              "title": "Cluster startup and shutdown troubleshooting",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "20",
+      "title": "Oracle Automatic Storage Management (ASM)",
+      "submodules": [
+        {
+          "number": "20.1",
+          "title": "ASM Architecture",
+          "items": [
+            {
+              "id": "oracle-20-1-asm-instance",
+              "title": "ASM instance",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-20-1-asm-disk-groups",
+              "title": "ASM disk groups",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-20-1-asm-files-and-aliases",
+              "title": "ASM files and aliases",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-20-1-asm-metadata",
+              "title": "ASM metadata",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-20-1-asm-client-architecture",
+              "title": "ASM client architecture",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "20.2",
+          "title": "ASM Storage Design",
+          "items": [
+            {
+              "id": "oracle-20-2-failure-groups",
+              "title": "Failure groups",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-20-2-external-normal-and-high-redundancy",
+              "title": "External, normal and high redundancy",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-20-2-allocation-units",
+              "title": "Allocation units",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-20-2-disk-discovery",
+              "title": "Disk discovery",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-20-2-asm-disk-header",
+              "title": "ASM disk header",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "20.3",
+          "title": "ASM Administration",
+          "items": [
+            {
+              "id": "oracle-20-3-create-and-alter-disk-groups",
+              "title": "Create and alter disk groups",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-20-3-add-and-drop-disks",
+              "title": "Add and drop disks",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-20-3-rebalance-operations",
+              "title": "Rebalance operations",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-20-3-asm-file-management",
+              "title": "ASM file management",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-20-3-asmcmd",
+              "title": "ASMCMD",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "20.4",
+          "title": "ASM Advanced Operations and Troubleshooting",
+          "items": [
+            {
+              "id": "oracle-20-4-asm-dynamic-volume-manager-overview",
+              "title": "ASM dynamic volume manager overview",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-20-4-disk-group-mount-issues",
+              "title": "Disk group mount issues",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-20-4-disk-failure-and-replacement",
+              "title": "Disk failure and replacement",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-20-4-rebalance-performance",
+              "title": "Rebalance performance",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-20-4-asm-metadata-diagnostics",
+              "title": "ASM metadata diagnostics",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-20-4-production-storage-scenarios",
+              "title": "Production storage scenarios",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "21",
+      "title": "Oracle Real Application Clusters (RAC)",
+      "submodules": [
+        {
+          "number": "21.1",
+          "title": "RAC Architecture Fundamentals",
+          "items": [
+            {
+              "id": "oracle-21-1-rac-architecture",
+              "title": "RAC architecture",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-21-1-cluster-database-and-instances",
+              "title": "Cluster database and instances",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-21-1-cache-fusion",
+              "title": "Cache Fusion",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-21-1-global-resource-directory",
+              "title": "Global Resource Directory",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-21-1-interconnect-fundamentals",
+              "title": "Interconnect fundamentals",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "21.2",
+          "title": "RAC Installation and Configuration",
+          "items": [
+            {
+              "id": "oracle-21-2-cluster-prerequisites",
+              "title": "Cluster prerequisites",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-21-2-grid-infrastructure-for-rac",
+              "title": "Grid Infrastructure for RAC",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-21-2-rac-database-creation",
+              "title": "RAC database creation",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-21-2-scan-and-vip",
+              "title": "SCAN and VIP",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-21-2-services-and-instances",
+              "title": "Services and instances",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "21.3",
+          "title": "RAC Administration",
+          "items": [
+            {
+              "id": "oracle-21-3-srvctl-database-management",
+              "title": "srvctl database management",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-21-3-srvctl-service-management",
+              "title": "srvctl service management",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-21-3-instance-management",
+              "title": "Instance management",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-21-3-service-placement",
+              "title": "Service placement",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-21-3-rac-configuration-changes",
+              "title": "RAC configuration changes",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "21.4",
+          "title": "RAC Performance and Workload",
+          "items": [
+            {
+              "id": "oracle-21-4-global-cache-waits",
+              "title": "Global Cache waits",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-21-4-global-enqueue-service",
+              "title": "Global Enqueue Service",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-21-4-interconnect-performance",
+              "title": "Interconnect performance",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-21-4-block-transfer-patterns",
+              "title": "Block transfer patterns",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-21-4-workload-distribution",
+              "title": "Workload distribution",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-21-4-service-based-workload-management",
+              "title": "Service-based workload management",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "21.5",
+          "title": "RAC Troubleshooting and Recovery",
+          "items": [
+            {
+              "id": "oracle-21-5-node-eviction",
+              "title": "Node eviction",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-21-5-voting-disk-and-ocr-issues",
+              "title": "Voting disk and OCR issues",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-21-5-split-brain-prevention",
+              "title": "Split-brain prevention",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-21-5-interconnect-failures",
+              "title": "Interconnect failures",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-21-5-clusterware-resource-failures",
+              "title": "Clusterware resource failures",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-21-5-rac-diagnostic-collection",
+              "title": "RAC diagnostic collection",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "21.6",
+          "title": "RAC Production Engineering",
+          "items": [
+            {
+              "id": "oracle-21-6-node-failure-recovery",
+              "title": "Node failure recovery",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-21-6-rolling-maintenance",
+              "title": "Rolling maintenance",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-21-6-rac-backup-and-recovery-considerations",
+              "title": "RAC backup and recovery considerations",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-21-6-rac-capacity-planning",
+              "title": "RAC capacity planning",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-21-6-rac-architecture-design-scenarios",
+              "title": "RAC architecture design scenarios",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "22",
+      "title": "Oracle Data Guard and Active Data Guard",
+      "submodules": [
+        {
+          "number": "22.1",
+          "title": "Data Guard Architecture",
+          "items": [
+            {
+              "id": "oracle-22-1-primary-and-standby-roles",
+              "title": "Primary and standby roles",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-22-1-redo-transport",
+              "title": "Redo transport",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-22-1-redo-apply",
+              "title": "Redo apply",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-22-1-physical-and-logical-architecture",
+              "title": "Physical and logical architecture",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-22-1-protection-modes",
+              "title": "Protection modes",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "22.2",
+          "title": "Standby Configuration",
+          "items": [
+            {
+              "id": "oracle-22-2-physical-standby-creation",
+              "title": "Physical standby creation",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-22-2-logical-standby-overview",
+              "title": "Logical standby overview",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-22-2-rman-based-standby-creation",
+              "title": "RMAN-based standby creation",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-22-2-data-guard-broker",
+              "title": "Data Guard Broker",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-22-2-standby-redo-logs",
+              "title": "Standby redo logs",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "22.3",
+          "title": "Data Guard Operations",
+          "items": [
+            {
+              "id": "oracle-22-3-switchover",
+              "title": "Switchover",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-22-3-failover",
+              "title": "Failover",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-22-3-reinstate",
+              "title": "Reinstate",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-22-3-role-transition-validation",
+              "title": "Role transition validation",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-22-3-snapshot-standby",
+              "title": "Snapshot standby",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-22-3-broker-operations",
+              "title": "Broker operations",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "22.4",
+          "title": "Advanced Data Guard",
+          "items": [
+            {
+              "id": "oracle-22-4-active-data-guard",
+              "title": "Active Data Guard",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-22-4-far-sync",
+              "title": "Far Sync",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-22-4-cascaded-standby",
+              "title": "Cascaded standby",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-22-4-multiple-standby-architecture",
+              "title": "Multiple standby architecture",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-22-4-real-time-query",
+              "title": "Real-time query",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "22.5",
+          "title": "Troubleshooting and Production Design",
+          "items": [
+            {
+              "id": "oracle-22-5-transport-lag",
+              "title": "Transport lag",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-22-5-apply-lag",
+              "title": "Apply lag",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-22-5-archive-gap-resolution",
+              "title": "Archive gap resolution",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-22-5-mrp-and-rfs-diagnosis",
+              "title": "MRP and RFS diagnosis",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-22-5-dr-design-and-testing",
+              "title": "DR design and testing",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-22-5-rpo-and-rto-validation",
+              "title": "RPO and RTO validation",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "23",
+      "title": "Oracle Multitenant Architecture",
+      "submodules": [
+        {
+          "number": "23.1",
+          "title": "Multitenant Fundamentals",
+          "items": [
+            {
+              "id": "oracle-23-1-cdb-and-pdb-architecture",
+              "title": "CDB and PDB architecture",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-23-1-cdb-root",
+              "title": "CDB root",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-23-1-pdb-seed",
+              "title": "PDB seed",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-23-1-common-and-local-users",
+              "title": "Common and local users",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-23-1-container-data-objects",
+              "title": "Container data objects",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "23.2",
+          "title": "PDB Lifecycle Administration",
+          "items": [
+            {
+              "id": "oracle-23-2-create-and-drop-pdbs",
+              "title": "Create and drop PDBs",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-23-2-clone-pdbs",
+              "title": "Clone PDBs",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-23-2-plug-and-unplug-pdbs",
+              "title": "Plug and unplug PDBs",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-23-2-pdb-refresh",
+              "title": "PDB refresh",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-23-2-pdb-open-modes",
+              "title": "PDB open modes",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "23.3",
+          "title": "Multitenant Operations",
+          "items": [
+            {
+              "id": "oracle-23-3-pdb-services",
+              "title": "PDB services",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-23-3-resource-management",
+              "title": "Resource management",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-23-3-backup-and-recovery",
+              "title": "Backup and recovery",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-23-3-pdb-relocation",
+              "title": "PDB relocation",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-23-3-common-user-administration",
+              "title": "Common user administration",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "23.4",
+          "title": "Advanced Multitenant",
+          "items": [
+            {
+              "id": "oracle-23-4-refreshable-pdbs",
+              "title": "Refreshable PDBs",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-23-4-application-containers",
+              "title": "Application containers",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-23-4-cdb-fleet-considerations",
+              "title": "CDB fleet considerations",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-23-4-multitenant-upgrade-and-migration",
+              "title": "Multitenant upgrade and migration",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-23-4-pdb-troubleshooting",
+              "title": "PDB troubleshooting",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "24",
+      "title": "Oracle Partitioning and Advanced Storage Features",
+      "submodules": [
+        {
+          "number": "24.1",
+          "title": "Partitioning Fundamentals",
+          "items": [
+            {
+              "id": "oracle-24-1-partitioning-concepts",
+              "title": "Partitioning concepts",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-24-1-partition-pruning",
+              "title": "Partition pruning",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-24-1-partition-wise-joins",
+              "title": "Partition-wise joins",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-24-1-partition-maintenance-operations",
+              "title": "Partition maintenance operations",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "24.2",
+          "title": "Partitioning Methods",
+          "items": [
+            {
+              "id": "oracle-24-2-range-partitioning",
+              "title": "Range partitioning",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-24-2-list-partitioning",
+              "title": "List partitioning",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-24-2-hash-partitioning",
+              "title": "Hash partitioning",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-24-2-interval-partitioning",
+              "title": "Interval partitioning",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-24-2-composite-partitioning",
+              "title": "Composite partitioning",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-24-2-reference-partitioning",
+              "title": "Reference partitioning",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "24.3",
+          "title": "Advanced Indexing",
+          "items": [
+            {
+              "id": "oracle-24-3-bitmap-indexes",
+              "title": "Bitmap indexes",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-24-3-function-based-indexes",
+              "title": "Function-based indexes",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-24-3-invisible-indexes",
+              "title": "Invisible indexes",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-24-3-domain-indexes",
+              "title": "Domain indexes",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-24-3-index-organized-tables",
+              "title": "Index-organized tables",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-24-3-index-maintenance",
+              "title": "Index maintenance",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "24.4",
+          "title": "Storage Optimization",
+          "items": [
+            {
+              "id": "oracle-24-4-table-and-index-compression",
+              "title": "Table and index compression",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-24-4-securefiles-lobs",
+              "title": "SecureFiles LOBs",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-24-4-in-memory-overview",
+              "title": "In-Memory overview",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-24-4-information-lifecycle-management",
+              "title": "Information Lifecycle Management",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-24-4-data-archival-strategies",
+              "title": "Data archival strategies",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "25",
+      "title": "Oracle Patching and Maintenance",
+      "submodules": [
+        {
+          "number": "25.1",
+          "title": "Patch Architecture and Planning",
+          "items": [
+            {
+              "id": "oracle-25-1-patch-types-and-release-updates",
+              "title": "Patch types and release updates",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-25-1-opatch-and-inventory",
+              "title": "OPatch and inventory",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-25-1-patch-readme-interpretation",
+              "title": "Patch README interpretation",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-25-1-prerequisite-and-conflict-checks",
+              "title": "Prerequisite and conflict checks",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-25-1-rollback-planning",
+              "title": "Rollback planning",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "25.2",
+          "title": "Database Patching",
+          "items": [
+            {
+              "id": "oracle-25-2-opatch-apply-and-rollback",
+              "title": "OPatch apply and rollback",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-25-2-datapatch",
+              "title": "datapatch",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-25-2-sql-patch-registry",
+              "title": "SQL patch registry",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-25-2-component-patch-validation",
+              "title": "Component patch validation",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-25-2-out-of-place-patching",
+              "title": "Out-of-place patching",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "25.3",
+          "title": "Grid Infrastructure and RAC Patching",
+          "items": [
+            {
+              "id": "oracle-25-3-grid-infrastructure-patching",
+              "title": "Grid Infrastructure patching",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-25-3-rac-rolling-patching",
+              "title": "RAC rolling patching",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-25-3-oracle-restart-patching",
+              "title": "Oracle Restart patching",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-25-3-opatchauto",
+              "title": "OPatchAuto",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-25-3-cluster-patch-sequencing",
+              "title": "Cluster patch sequencing",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "25.4",
+          "title": "Patch Validation and Troubleshooting",
+          "items": [
+            {
+              "id": "oracle-25-4-sql-registry-validation",
+              "title": "SQL registry validation",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-25-4-invalid-object-checks",
+              "title": "Invalid object checks",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-25-4-patch-log-analysis",
+              "title": "Patch log analysis",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-25-4-conflict-resolution",
+              "title": "Conflict resolution",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-25-4-post-patch-health-checks",
+              "title": "Post-patch health checks",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-25-4-patch-failure-recovery",
+              "title": "Patch failure recovery",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "26",
+      "title": "Oracle Database Upgrade",
+      "submodules": [
+        {
+          "number": "26.1",
+          "title": "Upgrade Planning and Assessment",
+          "items": [
+            {
+              "id": "oracle-26-1-version-compatibility",
+              "title": "Version compatibility",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-26-1-pre-upgrade-checks",
+              "title": "Pre-upgrade checks",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-26-1-autoupgrade-analysis",
+              "title": "AutoUpgrade analysis",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-26-1-deprecated-and-desupported-features",
+              "title": "Deprecated and desupported features",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-26-1-upgrade-strategy-and-risk",
+              "title": "Upgrade strategy and risk",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "26.2",
+          "title": "Upgrade Methods",
+          "items": [
+            {
+              "id": "oracle-26-2-database-upgrade-assistant-dbua",
+              "title": "Database Upgrade Assistant (DBUA)",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-26-2-manual-upgrade",
+              "title": "Manual upgrade",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-26-2-autoupgrade",
+              "title": "AutoUpgrade",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-26-2-command-line-upgrade-workflow",
+              "title": "Command-line upgrade workflow",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-26-2-upgrade-path-selection",
+              "title": "Upgrade path selection",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "26.3",
+          "title": "Upgrade Execution",
+          "items": [
+            {
+              "id": "oracle-26-3-pre-upgrade-preparation",
+              "title": "Pre-upgrade preparation",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-26-3-upgrade-execution",
+              "title": "Upgrade execution",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-26-3-time-zone-file-upgrade",
+              "title": "Time zone file upgrade",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-26-3-post-upgrade-actions",
+              "title": "Post-upgrade actions",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-26-3-datapatch-and-component-validation",
+              "title": "Datapatch and component validation",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "26.4",
+          "title": "Upgrade Troubleshooting and Rollback",
+          "items": [
+            {
+              "id": "oracle-26-4-upgrade-failures",
+              "title": "Upgrade failures",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-26-4-invalid-objects-and-registry-issues",
+              "title": "Invalid objects and registry issues",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-26-4-upgrade-logs",
+              "title": "Upgrade logs",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-26-4-fallback-and-restore-strategy",
+              "title": "Fallback and restore strategy",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-26-4-post-upgrade-performance-validation",
+              "title": "Post-upgrade performance validation",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "27",
+      "title": "Oracle Database Migration",
+      "submodules": [
+        {
+          "number": "27.1",
+          "title": "Migration Assessment and Planning",
+          "items": [
+            {
+              "id": "oracle-27-1-source-and-target-assessment",
+              "title": "Source and target assessment",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-27-1-character-set-compatibility",
+              "title": "Character set compatibility",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-27-1-platform-and-endian-assessment",
+              "title": "Platform and endian assessment",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-27-1-downtime-and-data-volume-planning",
+              "title": "Downtime and data-volume planning",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-27-1-migration-strategy-selection",
+              "title": "Migration strategy selection",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "27.2",
+          "title": "Data Pump Migration",
+          "items": [
+            {
+              "id": "oracle-27-2-expdp-and-impdp-architecture",
+              "title": "expdp and impdp architecture",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-27-2-schema-and-tablespace-migration",
+              "title": "Schema and tablespace migration",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-27-2-metadata-and-data-only-migration",
+              "title": "Metadata and data-only migration",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-27-2-parallelism-and-large-table-migration",
+              "title": "Parallelism and large-table migration",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-27-2-network-mode-and-remapping",
+              "title": "Network mode and remapping",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "27.3",
+          "title": "Platform and Storage Migration",
+          "items": [
+            {
+              "id": "oracle-27-3-cross-platform-migration",
+              "title": "Cross-platform migration",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-27-3-transportable-tablespaces",
+              "title": "Transportable tablespaces",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-27-3-rman-convert",
+              "title": "RMAN convert",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-27-3-asm-and-filesystem-migration",
+              "title": "ASM and filesystem migration",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-27-3-endian-conversion",
+              "title": "Endian conversion",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-27-3-storage-cutover",
+              "title": "Storage cutover",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "27.4",
+          "title": "Cloud and Heterogeneous Migration",
+          "items": [
+            {
+              "id": "oracle-27-4-oracle-on-ec2",
+              "title": "Oracle on EC2",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-27-4-aws-rds-for-oracle",
+              "title": "AWS RDS for Oracle",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-27-4-oracle-migration-service-options",
+              "title": "Oracle migration service options",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-27-4-oracle-to-postgresql-migration-concepts",
+              "title": "Oracle to PostgreSQL migration concepts",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-27-4-ora2pg",
+              "title": "Ora2Pg",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-27-4-cloud-migration-limitations",
+              "title": "Cloud migration limitations",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "27.5",
+          "title": "Migration Validation and Cutover",
+          "items": [
+            {
+              "id": "oracle-27-5-data-validation",
+              "title": "Data validation",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-27-5-object-and-application-validation",
+              "title": "Object and application validation",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-27-5-invalid-object-remediation",
+              "title": "Invalid object remediation",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-27-5-sequence-and-synonym-validation",
+              "title": "Sequence and synonym validation",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-27-5-cutover-planning",
+              "title": "Cutover planning",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-27-5-rollback-and-reconciliation",
+              "title": "Rollback and reconciliation",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "27.6",
+          "title": "Large-Scale Migration Projects",
+          "items": [
+            {
+              "id": "oracle-27-6-multi-terabyte-migration-planning",
+              "title": "Multi-terabyte migration planning",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-27-6-throughput-and-parallelism-optimization",
+              "title": "Throughput and parallelism optimization",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-27-6-network-and-staging-design",
+              "title": "Network and staging design",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-27-6-phased-migration",
+              "title": "Phased migration",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-27-6-end-to-end-migration-execution",
+              "title": "End-to-end migration execution",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "28",
+      "title": "Oracle Database Security and Advanced Auditing",
+      "submodules": [
+        {
+          "number": "28.1",
+          "title": "Security Architecture",
+          "items": [
+            {
+              "id": "oracle-28-1-authentication-and-authorization",
+              "title": "Authentication and authorization",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-28-1-database-security-boundaries",
+              "title": "Database security boundaries",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-28-1-network-security",
+              "title": "Network security",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-28-1-encryption-architecture",
+              "title": "Encryption architecture",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-28-1-security-hardening-principles",
+              "title": "Security hardening principles",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "28.2",
+          "title": "Encryption and Data Protection",
+          "items": [
+            {
+              "id": "oracle-28-2-transparent-data-encryption",
+              "title": "Transparent Data Encryption",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-28-2-wallet-and-keystore-management",
+              "title": "Wallet and keystore management",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-28-2-data-redaction",
+              "title": "Data redaction",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-28-2-backup-encryption",
+              "title": "Backup encryption",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-28-2-key-lifecycle",
+              "title": "Key lifecycle",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "28.3",
+          "title": "Auditing and Compliance",
+          "items": [
+            {
+              "id": "oracle-28-3-unified-auditing",
+              "title": "Unified Auditing",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-28-3-audit-policies",
+              "title": "Audit policies",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-28-3-fine-grained-auditing",
+              "title": "Fine-grained auditing",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-28-3-audit-trail-management",
+              "title": "Audit trail management",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-28-3-audit-retention-and-purge",
+              "title": "Audit retention and purge",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "28.4",
+          "title": "Advanced Security Controls",
+          "items": [
+            {
+              "id": "oracle-28-4-database-vault",
+              "title": "Database Vault",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-28-4-data-masking-and-subsetting",
+              "title": "Data Masking and Subsetting",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-28-4-privilege-analysis",
+              "title": "Privilege analysis",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-28-4-security-assessment",
+              "title": "Security assessment",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-28-4-patch-and-vulnerability-management",
+              "title": "Patch and vulnerability management",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "29",
+      "title": "Oracle Enterprise Manager and Fleet Administration",
+      "submodules": [
+        {
+          "number": "29.1",
+          "title": "OEM Architecture",
+          "items": [
+            {
+              "id": "oracle-29-1-oracle-management-service",
+              "title": "Oracle Management Service",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-29-1-repository-architecture",
+              "title": "Repository architecture",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-29-1-management-agents",
+              "title": "Management agents",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-29-1-plug-ins-and-target-types",
+              "title": "Plug-ins and target types",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-29-1-oem-deployment-overview",
+              "title": "OEM deployment overview",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "29.2",
+          "title": "OEM Administration",
+          "items": [
+            {
+              "id": "oracle-29-2-target-discovery",
+              "title": "Target discovery",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-29-2-monitoring-templates",
+              "title": "Monitoring templates",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-29-2-incident-rules-and-notifications",
+              "title": "Incident rules and notifications",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-29-2-job-system",
+              "title": "Job system",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-29-2-named-credentials",
+              "title": "Named credentials",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "29.3",
+          "title": "Performance and Diagnostics",
+          "items": [
+            {
+              "id": "oracle-29-3-performance-pages",
+              "title": "Performance pages",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-29-3-awr-integration",
+              "title": "AWR integration",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-29-3-sql-monitoring",
+              "title": "SQL monitoring",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-29-3-incident-management",
+              "title": "Incident management",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-29-3-compliance-and-reporting",
+              "title": "Compliance and reporting",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "29.4",
+          "title": "Fleet Management",
+          "items": [
+            {
+              "id": "oracle-29-4-fleet-patching",
+              "title": "Fleet patching",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-29-4-provisioning",
+              "title": "Provisioning",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-29-4-database-lifecycle-management",
+              "title": "Database lifecycle management",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-29-4-fleet-monitoring",
+              "title": "Fleet monitoring",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-29-4-enterprise-scale-operations",
+              "title": "Enterprise-scale operations",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "30",
+      "title": "Oracle Database Production Troubleshooting",
+      "submodules": [
+        {
+          "number": "30.1",
+          "title": "Incident Response Methodology",
+          "items": [
+            {
+              "id": "oracle-30-1-incident-triage",
+              "title": "Incident triage",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-30-1-impact-and-scope-assessment",
+              "title": "Impact and scope assessment",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-30-1-evidence-collection",
+              "title": "Evidence collection",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-30-1-hypothesis-driven-diagnosis",
+              "title": "Hypothesis-driven diagnosis",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-30-1-safe-change-control",
+              "title": "Safe change control",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "30.2",
+          "title": "Availability and Connectivity Incidents",
+          "items": [
+            {
+              "id": "oracle-30-2-database-unavailable",
+              "title": "Database unavailable",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-30-2-instance-crash",
+              "title": "Instance crash",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-30-2-listener-and-service-outage",
+              "title": "Listener and service outage",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-30-2-login-failures",
+              "title": "Login failures",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-30-2-connection-exhaustion",
+              "title": "Connection exhaustion",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "30.3",
+          "title": "Storage and Recovery Incidents",
+          "items": [
+            {
+              "id": "oracle-30-3-tablespace-full",
+              "title": "Tablespace full",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-30-3-archive-destination-full",
+              "title": "Archive destination full",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-30-3-datafile-failures",
+              "title": "Datafile failures",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-30-3-control-file-issues",
+              "title": "Control file issues",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-30-3-redo-log-issues",
+              "title": "Redo log issues",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-30-3-corruption-scenarios",
+              "title": "Corruption scenarios",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "30.4",
+          "title": "Performance and Workload Incidents",
+          "items": [
+            {
+              "id": "oracle-30-4-high-cpu",
+              "title": "High CPU",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-30-4-slow-sql",
+              "title": "Slow SQL",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-30-4-blocking-and-locks",
+              "title": "Blocking and locks",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-30-4-i-o-saturation",
+              "title": "I/O saturation",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-30-4-memory-pressure",
+              "title": "Memory pressure",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-30-4-resource-manager-issues",
+              "title": "Resource manager issues",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "30.5",
+          "title": "Advanced Production Incidents",
+          "items": [
+            {
+              "id": "oracle-30-5-rac-node-and-cluster-failures",
+              "title": "RAC node and cluster failures",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-30-5-data-guard-transport-and-apply-failures",
+              "title": "Data Guard transport and apply failures",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-30-5-asm-disk-failures",
+              "title": "ASM disk failures",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-30-5-backup-and-recovery-incidents",
+              "title": "Backup and recovery incidents",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-30-5-multitenant-failures",
+              "title": "Multitenant failures",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "30.6",
+          "title": "Incident Closure and RCA",
+          "items": [
+            {
+              "id": "oracle-30-6-root-cause-analysis",
+              "title": "Root-cause analysis",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-30-6-incident-timeline",
+              "title": "Incident timeline",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-30-6-corrective-and-preventive-actions",
+              "title": "Corrective and preventive actions",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-30-6-validation-and-monitoring",
+              "title": "Validation and monitoring",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-30-6-post-incident-documentation",
+              "title": "Post-incident documentation",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "31",
+      "title": "Oracle Data Integration and Replication",
+      "submodules": [
+        {
+          "number": "31.1",
+          "title": "Replication Fundamentals",
+          "items": [
+            {
+              "id": "oracle-31-1-replication-concepts",
+              "title": "Replication concepts",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-31-1-capture-and-apply-architecture",
+              "title": "Capture and apply architecture",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-31-1-logical-change-records",
+              "title": "Logical change records",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-31-1-data-consistency-and-latency",
+              "title": "Data consistency and latency",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-31-1-replication-topology",
+              "title": "Replication topology",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "31.2",
+          "title": "Oracle GoldenGate",
+          "items": [
+            {
+              "id": "oracle-31-2-goldengate-architecture",
+              "title": "GoldenGate architecture",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-31-2-extract",
+              "title": "Extract",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-31-2-trail-files",
+              "title": "Trail files",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-31-2-replicat",
+              "title": "Replicat",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-31-2-integrated-capture-and-apply",
+              "title": "Integrated capture and apply",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-31-2-configuration-and-operations",
+              "title": "Configuration and operations",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-31-2-troubleshooting-and-performance",
+              "title": "Troubleshooting and performance",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "31.3",
+          "title": "SharePlex",
+          "items": [
+            {
+              "id": "oracle-31-3-shareplex-architecture",
+              "title": "SharePlex architecture",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-31-3-capture",
+              "title": "Capture",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-31-3-export-and-import",
+              "title": "Export and Import",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-31-3-post",
+              "title": "Post",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-31-3-configuration-and-operations",
+              "title": "Configuration and operations",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-31-3-troubleshooting-and-recovery",
+              "title": "Troubleshooting and recovery",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "31.4",
+          "title": "Replication Design and Operations",
+          "items": [
+            {
+              "id": "oracle-31-4-topology-design",
+              "title": "Topology design",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-31-4-ddl-replication",
+              "title": "DDL replication",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-31-4-conflict-detection-and-resolution",
+              "title": "Conflict detection and resolution",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-31-4-monitoring-and-lag-management",
+              "title": "Monitoring and lag management",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-31-4-cutover-and-failback",
+              "title": "Cutover and failback",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-31-4-production-support",
+              "title": "Production support",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "32",
+      "title": "Oracle Sharding and Distributed Database Architecture",
+      "submodules": [
+        {
+          "number": "32.1",
+          "title": "Distributed Database Fundamentals",
+          "items": [
+            {
+              "id": "oracle-32-1-distributed-database-concepts",
+              "title": "Distributed database concepts",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-32-1-database-links",
+              "title": "Database links",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-32-1-remote-sql-execution",
+              "title": "Remote SQL execution",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-32-1-distributed-transactions",
+              "title": "Distributed transactions",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-32-1-two-phase-commit",
+              "title": "Two-phase commit",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "32.2",
+          "title": "Oracle Sharding Architecture",
+          "items": [
+            {
+              "id": "oracle-32-2-sharding-architecture",
+              "title": "Sharding architecture",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-32-2-shard-catalog",
+              "title": "Shard catalog",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-32-2-shard-directors",
+              "title": "Shard directors",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-32-2-shard-keys",
+              "title": "Shard keys",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-32-2-data-distribution",
+              "title": "Data distribution",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-32-2-global-services",
+              "title": "Global services",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "32.3",
+          "title": "Distributed Operations and Troubleshooting",
+          "items": [
+            {
+              "id": "oracle-32-3-distributed-query-performance",
+              "title": "Distributed query performance",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-32-3-transaction-failure-handling",
+              "title": "Transaction failure handling",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-32-3-network-partitions",
+              "title": "Network partitions",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-32-3-shard-availability",
+              "title": "Shard availability",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-32-3-backup-and-recovery",
+              "title": "Backup and recovery",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-32-3-operational-design",
+              "title": "Operational design",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "33",
+      "title": "Oracle Exadata and Engineered Systems",
+      "submodules": [
+        {
+          "number": "33.1",
+          "title": "Exadata Architecture",
+          "items": [
+            {
+              "id": "oracle-33-1-database-servers",
+              "title": "Database servers",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-33-1-storage-servers",
+              "title": "Storage servers",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-33-1-infiniband-and-roce-fabric",
+              "title": "InfiniBand and RoCE fabric",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-33-1-exadata-software-architecture",
+              "title": "Exadata software architecture",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-33-1-cell-services",
+              "title": "Cell services",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "33.2",
+          "title": "Exadata Storage Features",
+          "items": [
+            {
+              "id": "oracle-33-2-smart-scan",
+              "title": "Smart Scan",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-33-2-storage-indexes",
+              "title": "Storage indexes",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-33-2-predicate-and-projection-offload",
+              "title": "Predicate and projection offload",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-33-2-i-o-resource-management",
+              "title": "I/O resource management",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-33-2-flash-cache",
+              "title": "Flash Cache",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "33.3",
+          "title": "Exadata Administration",
+          "items": [
+            {
+              "id": "oracle-33-3-cell-administration",
+              "title": "Cell administration",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-33-3-cellcli",
+              "title": "CellCLI",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-33-3-exacli",
+              "title": "ExaCLI",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-33-3-exadata-monitoring",
+              "title": "Exadata monitoring",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-33-3-patching-and-maintenance",
+              "title": "Patching and maintenance",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-33-3-storage-cell-management",
+              "title": "Storage cell management",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "33.4",
+          "title": "Exadata Performance and Troubleshooting",
+          "items": [
+            {
+              "id": "oracle-33-4-smart-scan-diagnostics",
+              "title": "Smart Scan diagnostics",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-33-4-cell-and-fabric-issues",
+              "title": "Cell and fabric issues",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-33-4-i-o-latency-analysis",
+              "title": "I/O latency analysis",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-33-4-offload-efficiency",
+              "title": "Offload efficiency",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-33-4-exadata-production-scenarios",
+              "title": "Exadata production scenarios",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "34",
+      "title": "Oracle Database on Cloud Platforms",
+      "submodules": [
+        {
+          "number": "34.1",
+          "title": "Oracle Cloud Infrastructure",
+          "items": [
+            {
+              "id": "oracle-34-1-oci-database-services",
+              "title": "OCI database services",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-34-1-base-database-service",
+              "title": "Base Database Service",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-34-1-exadata-database-service",
+              "title": "Exadata Database Service",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-34-1-networking-and-iam-integration",
+              "title": "Networking and IAM integration",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-34-1-backup-and-recovery",
+              "title": "Backup and recovery",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "34.2",
+          "title": "Oracle Autonomous Database",
+          "items": [
+            {
+              "id": "oracle-34-2-autonomous-architecture",
+              "title": "Autonomous architecture",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-34-2-provisioning-and-connectivity",
+              "title": "Provisioning and connectivity",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-34-2-workload-types",
+              "title": "Workload types",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-34-2-operations-and-monitoring",
+              "title": "Operations and monitoring",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-34-2-autonomous-security-and-backup",
+              "title": "Autonomous security and backup",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "34.3",
+          "title": "AWS Oracle Deployments",
+          "items": [
+            {
+              "id": "oracle-34-3-oracle-on-ec2-architecture",
+              "title": "Oracle on EC2 architecture",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-34-3-aws-rds-for-oracle",
+              "title": "AWS RDS for Oracle",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-34-3-ebs-and-storage-design",
+              "title": "EBS and storage design",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-34-3-s3-integration",
+              "title": "S3 integration",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-34-3-networking-and-iam",
+              "title": "Networking and IAM",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-34-3-operational-limitations",
+              "title": "Operational limitations",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "34.4",
+          "title": "Azure and Multicloud Deployments",
+          "items": [
+            {
+              "id": "oracle-34-4-oracle-deployment-patterns-on-azure",
+              "title": "Oracle deployment patterns on Azure",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-34-4-oracle-database-azure-overview",
+              "title": "Oracle Database@Azure overview",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-34-4-multicloud-connectivity",
+              "title": "Multicloud connectivity",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-34-4-identity-and-network-design",
+              "title": "Identity and network design",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "34.5",
+          "title": "Cloud Operations and Architecture",
+          "items": [
+            {
+              "id": "oracle-34-5-cloud-backup-and-recovery",
+              "title": "Cloud backup and recovery",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-34-5-monitoring-and-security",
+              "title": "Monitoring and security",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-34-5-availability-design",
+              "title": "Availability design",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-34-5-performance-and-scaling",
+              "title": "Performance and scaling",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-34-5-cost-and-capacity-management",
+              "title": "Cost and capacity management",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "35",
+      "title": "Oracle Database Architecture Design and Capacity Planning",
+      "submodules": [
+        {
+          "number": "35.1",
+          "title": "Architecture Design",
+          "items": [
+            {
+              "id": "oracle-35-1-workload-requirements",
+              "title": "Workload requirements",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-35-1-availability-requirements",
+              "title": "Availability requirements",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-35-1-service-level-objectives",
+              "title": "Service-level objectives",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-35-1-architecture-selection",
+              "title": "Architecture selection",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-35-1-technology-trade-offs",
+              "title": "Technology trade-offs",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "35.2",
+          "title": "Capacity Planning",
+          "items": [
+            {
+              "id": "oracle-35-2-cpu-and-memory-sizing",
+              "title": "CPU and memory sizing",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-35-2-storage-growth-forecasting",
+              "title": "Storage growth forecasting",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-35-2-iops-and-throughput-sizing",
+              "title": "IOPS and throughput sizing",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-35-2-network-capacity",
+              "title": "Network capacity",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-35-2-peak-workload-modeling",
+              "title": "Peak workload modeling",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "35.3",
+          "title": "Resilience and Disaster Recovery Design",
+          "items": [
+            {
+              "id": "oracle-35-3-rpo-and-rto",
+              "title": "RPO and RTO",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-35-3-ha-and-dr-architecture-choices",
+              "title": "HA and DR architecture choices",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-35-3-failure-domain-design",
+              "title": "Failure-domain design",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-35-3-recovery-testing",
+              "title": "Recovery testing",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-35-3-business-continuity",
+              "title": "Business continuity",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "35.4",
+          "title": "Enterprise Architecture Decisions",
+          "items": [
+            {
+              "id": "oracle-35-4-rac-versus-data-guard",
+              "title": "RAC versus Data Guard",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-35-4-asm-versus-filesystem",
+              "title": "ASM versus filesystem",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-35-4-on-premises-versus-cloud",
+              "title": "On-premises versus cloud",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-35-4-consolidation-strategy",
+              "title": "Consolidation strategy",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-35-4-multitenant-design",
+              "title": "Multitenant design",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "35.5",
+          "title": "Architecture Documentation",
+          "items": [
+            {
+              "id": "oracle-35-5-architecture-diagrams",
+              "title": "Architecture diagrams",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-35-5-high-level-and-low-level-designs",
+              "title": "High-level and low-level designs",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-35-5-technical-design-documents",
+              "title": "Technical design documents",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-35-5-capacity-and-risk-assessments",
+              "title": "Capacity and risk assessments",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-35-5-architecture-review",
+              "title": "Architecture review",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "36",
+      "title": "Oracle DBA Engineering and Operational Frameworks",
+      "submodules": [
+        {
+          "number": "36.1",
+          "title": "DBA Engineering Practices",
+          "items": [
+            {
+              "id": "oracle-36-1-standard-operating-procedures",
+              "title": "Standard operating procedures",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-36-1-runbook-design",
+              "title": "Runbook design",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-36-1-change-and-release-management",
+              "title": "Change and release management",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-36-1-configuration-standards",
+              "title": "Configuration standards",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-36-1-operational-automation-governance",
+              "title": "Operational automation governance",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "36.2",
+          "title": "Operational Governance",
+          "items": [
+            {
+              "id": "oracle-36-2-database-standards",
+              "title": "Database standards",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-36-2-access-and-audit-governance",
+              "title": "Access and audit governance",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-36-2-compliance-evidence",
+              "title": "Compliance evidence",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-36-2-service-ownership",
+              "title": "Service ownership",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-36-2-operational-metrics",
+              "title": "Operational metrics",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "36.3",
+          "title": "Reliability Engineering",
+          "items": [
+            {
+              "id": "oracle-36-3-availability-metrics",
+              "title": "Availability metrics",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-36-3-proactive-risk-reduction",
+              "title": "Proactive risk reduction",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-36-3-recurring-incident-prevention",
+              "title": "Recurring incident prevention",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-36-3-capacity-and-resilience-reviews",
+              "title": "Capacity and resilience reviews",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-36-3-operational-readiness",
+              "title": "Operational readiness",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "36.4",
+          "title": "Technical Documentation and Knowledge Transfer",
+          "items": [
+            {
+              "id": "oracle-36-4-technical-documentation-standards",
+              "title": "Technical documentation standards",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-36-4-environment-handover",
+              "title": "Environment handover",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-36-4-knowledge-transfer-practices",
+              "title": "Knowledge-transfer practices",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-36-4-support-transition",
+              "title": "Support transition",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-36-4-operational-ownership",
+              "title": "Operational ownership",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "37",
+      "title": "Oracle DBA Interview Preparation, KT, RCA and Production Project Lab",
+      "submodules": [
+        {
+          "number": "37.1",
+          "title": "Interview Preparation",
+          "items": [
+            {
+              "id": "oracle-37-1-fundamental-dba-questions",
+              "title": "Fundamental DBA questions",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-37-1-intermediate-dba-questions",
+              "title": "Intermediate DBA questions",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-37-1-advanced-dba-questions",
+              "title": "Advanced DBA questions",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-37-1-senior-dba-scenarios",
+              "title": "Senior DBA scenarios",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-37-1-database-architect-scenarios",
+              "title": "Database architect scenarios",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "37.2",
+          "title": "Technical Scenario Interviews",
+          "items": [
+            {
+              "id": "oracle-37-2-performance-scenarios",
+              "title": "Performance scenarios",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-37-2-backup-and-recovery-scenarios",
+              "title": "Backup and recovery scenarios",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-37-2-rac-and-asm-scenarios",
+              "title": "RAC and ASM scenarios",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-37-2-data-guard-scenarios",
+              "title": "Data Guard scenarios",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-37-2-migration-and-upgrade-scenarios",
+              "title": "Migration and upgrade scenarios",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-37-2-cloud-architecture-scenarios",
+              "title": "Cloud architecture scenarios",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "37.3",
+          "title": "KT Documentation",
+          "items": [
+            {
+              "id": "oracle-37-3-knowledge-transfer-document-preparation",
+              "title": "Knowledge-transfer document preparation",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-37-3-environment-handover-documents",
+              "title": "Environment handover documents",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-37-3-architecture-walkthroughs",
+              "title": "Architecture walkthroughs",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-37-3-operational-kt-simulation",
+              "title": "Operational KT simulation",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "37.4",
+          "title": "RCA Documentation",
+          "items": [
+            {
+              "id": "oracle-37-4-rca-structure",
+              "title": "RCA structure",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-37-4-incident-timeline-and-evidence",
+              "title": "Incident timeline and evidence",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-37-4-five-whys-and-causal-analysis",
+              "title": "Five Whys and causal analysis",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-37-4-corrective-and-preventive-action-documents",
+              "title": "Corrective and preventive action documents",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-37-4-rca-presentation",
+              "title": "RCA presentation",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "37.5",
+          "title": "End-to-End Production Project Simulation",
+          "items": [
+            {
+              "id": "oracle-37-5-database-deployment-project",
+              "title": "Database deployment project",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-37-5-multi-terabyte-migration-project",
+              "title": "Multi-terabyte migration project",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-37-5-ha-and-dr-implementation-project",
+              "title": "HA and DR implementation project",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-37-5-patching-and-upgrade-project",
+              "title": "Patching and upgrade project",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-37-5-production-incident-simulation",
+              "title": "Production incident simulation",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "37.6",
+          "title": "Senior DBA and Architect Scenarios",
+          "items": [
+            {
+              "id": "oracle-37-6-architecture-decision-exercises",
+              "title": "Architecture decision exercises",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-37-6-complex-troubleshooting-exercises",
+              "title": "Complex troubleshooting exercises",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-37-6-capacity-and-resilience-decisions",
+              "title": "Capacity and resilience decisions",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-37-6-technical-leadership",
+              "title": "Technical leadership",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-37-6-stakeholder-communication",
+              "title": "Stakeholder communication",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "38",
+      "title": "Oracle Database Scripting, Shell Integration and Automation",
+      "submodules": [
+        {
+          "number": "38.1",
+          "title": "Oracle Database Scripts",
+          "items": [
+            {
+              "id": "oracle-38-1-tablespace-utilization-and-free-space-report",
+              "title": "Tablespace utilization and free-space report",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-38-1-datafile-and-tempfile-monitoring",
+              "title": "Datafile and tempfile monitoring",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-38-1-blocking-and-locking-session-report",
+              "title": "Blocking and locking session report",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-38-1-active-sessions-and-long-running-sql",
+              "title": "Active sessions and long-running SQL",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-38-1-database-health-check-scripts",
+              "title": "Database health-check scripts",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-38-1-rman-backup-status-and-validation",
+              "title": "RMAN backup status and validation",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-38-1-rac-database-and-instance-monitoring",
+              "title": "RAC database and instance monitoring",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-38-1-asm-disk-group-utilization",
+              "title": "ASM disk-group utilization",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-38-1-data-guard-monitoring",
+              "title": "Data Guard monitoring",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-38-1-user-schema-and-object-reports",
+              "title": "User, schema and object reports",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-38-1-performance-and-diagnostic-scripts",
+              "title": "Performance and diagnostic scripts",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "38.2",
+          "title": "Shell Scripting for Oracle DBAs",
+          "items": [
+            {
+              "id": "oracle-38-2-shell-scripting-fundamentals",
+              "title": "Shell scripting fundamentals",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-38-2-oracle-environment-configuration",
+              "title": "Oracle environment configuration",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-38-2-sql-plus-integration",
+              "title": "SQL*Plus integration",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-38-2-database-monitoring-shell-scripts",
+              "title": "Database monitoring shell scripts",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-38-2-logging-and-error-handling",
+              "title": "Logging and error handling",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-38-2-email-and-alert-integration",
+              "title": "Email and alert integration",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-38-2-rac-aware-shell-scripting",
+              "title": "RAC-aware shell scripting",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-38-2-reusable-dba-script-frameworks",
+              "title": "Reusable DBA script frameworks",
+              "status": "not-started"
+            }
+          ]
+        },
+        {
+          "number": "38.3",
+          "title": "Oracle Database Automation",
+          "items": [
+            {
+              "id": "oracle-38-3-automated-database-health-checks",
+              "title": "Automated database health checks",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-38-3-scheduled-database-maintenance",
+              "title": "Scheduled database maintenance",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-38-3-automated-backup-validation",
+              "title": "Automated backup validation",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-38-3-monitoring-and-alert-automation",
+              "title": "Monitoring and alert automation",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-38-3-automated-reporting",
+              "title": "Automated reporting",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-38-3-rac-and-data-guard-automation",
+              "title": "RAC and Data Guard automation",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-38-3-maintenance-and-housekeeping-automation",
+              "title": "Maintenance and housekeeping automation",
+              "status": "not-started"
+            },
+            {
+              "id": "oracle-38-3-production-automation-framework",
+              "title": "Production automation framework",
+              "status": "not-started"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
