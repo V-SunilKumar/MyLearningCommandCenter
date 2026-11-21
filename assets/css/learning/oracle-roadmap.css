@@ -82,3 +82,22 @@
 .or-completion-check input:checked + .or-checkmark:after{content:"";display:block;width:4px;height:8px;border:solid #042b28;border-width:0 2px 2px 0;transform:rotate(45deg);margin:1px 0 0 5px}
 .or-completion-check input:focus-visible + .or-checkmark{outline:2px solid #4ed0ed;outline-offset:2px}
 .or-study-item:has(.or-completion-check input:checked) .or-study-open{color:#7ddbbd}
+
+/* V6: Full-workspace Oracle study page — preserve dashboard layout */
+.content-view:has(.oracle-roadmap-shell) {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 0;
+    padding: 12px 18px;
+}
+
+.content-view:has(.oracle-roadmap-shell) > .oracle-roadmap-shell {
+    width: 100%;
+    max-width: none;
+    max-height: none;
+    flex: 1 1 auto;
+    min-width: 0;
+    min-height: 0;
+    height: 100%;
+}
