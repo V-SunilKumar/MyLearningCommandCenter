@@ -1,0 +1,196 @@
+﻿{
+  "schemaVersion": "1.0",
+  "technologyId": "oracle",
+  "technologyName": "Oracle Database",
+  "roadmapVersion": "1.0.0",
+  "description": "A professional Oracle Database learning roadmap progressing from foundational concepts to database administration, engineering, troubleshooting and architecture.",
+  "prerequisites": [],
+  "modules": [
+    {
+      "id": "oracle-fundamentals",
+      "sequence": 1,
+      "title": "Oracle Database Fundamentals",
+      "description": "Understand relational database concepts, Oracle Database capabilities, versions, editions and core terminology.",
+      "topics": [
+        {
+          "id": "database-foundations",
+          "sequence": 1,
+          "title": "Database Foundations",
+          "objectives": [
+            {
+              "id": "ora-fund-001",
+              "sequence": 1,
+              "title": "Understand database and relational database concepts",
+              "description": "Explain databases, relational models, tables, rows, columns, keys, relationships and constraints.",
+              "level": "foundation",
+              "estimatedMinutes": 60,
+              "tags": ["database", "relational-model", "fundamentals"],
+              "prerequisites": []
+            },
+            {
+              "id": "ora-fund-002",
+              "sequence": 2,
+              "title": "Understand SQL and database interaction",
+              "description": "Explain how SQL is used to define, manipulate, query and control relational database data.",
+              "level": "foundation",
+              "estimatedMinutes": 60,
+              "tags": ["sql", "database-interaction"],
+              "prerequisites": ["ora-fund-001"]
+            }
+          ]
+        },
+        {
+          "id": "oracle-overview",
+          "sequence": 2,
+          "title": "Oracle Database Overview",
+          "objectives": [
+            {
+              "id": "ora-fund-003",
+              "sequence": 1,
+              "title": "Understand Oracle Database capabilities and architecture at a high level",
+              "description": "Identify major Oracle Database capabilities, common deployment models and the distinction between database and instance.",
+              "level": "foundation",
+              "estimatedMinutes": 75,
+              "tags": ["oracle", "architecture", "overview"],
+              "prerequisites": ["ora-fund-001"]
+            },
+            {
+              "id": "ora-fund-004",
+              "sequence": 2,
+              "title": "Understand Oracle versions, releases and support terminology",
+              "description": "Recognize Oracle release numbering, release updates, editions and the importance of support and patch lifecycle.",
+              "level": "foundation",
+              "estimatedMinutes": 60,
+              "tags": ["oracle-versions", "release-updates", "patching"],
+              "prerequisites": ["ora-fund-003"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "oracle-architecture",
+      "sequence": 2,
+      "title": "Oracle Database Architecture",
+      "description": "Study the physical and logical architecture, memory structures, processes and storage organization.",
+      "topics": [
+        {
+          "id": "architecture-overview",
+          "sequence": 1,
+          "title": "Architecture Overview",
+          "objectives": [
+            {
+              "id": "ora-arch-001",
+              "sequence": 1,
+              "title": "Differentiate Oracle Database and Oracle Instance",
+              "description": "Explain the distinction between persistent database files and the memory and processes that form an Oracle instance.",
+              "level": "foundation",
+              "estimatedMinutes": 60,
+              "tags": ["instance", "database", "architecture"],
+              "prerequisites": ["ora-fund-003"]
+            },
+            {
+              "id": "ora-arch-002",
+              "sequence": 2,
+              "title": "Identify Oracle physical database files",
+              "description": "Explain the purpose of datafiles, control files, online redo log files, archived redo logs and parameter files.",
+              "level": "intermediate",
+              "estimatedMinutes": 90,
+              "tags": ["datafiles", "control-files", "redo-logs", "physical-storage"],
+              "prerequisites": ["ora-arch-001"]
+            }
+          ]
+        },
+        {
+          "id": "memory-architecture",
+          "sequence": 2,
+          "title": "Memory Architecture",
+          "objectives": [
+            {
+              "id": "ora-arch-003",
+              "sequence": 1,
+              "title": "Understand the System Global Area",
+              "description": "Explain the SGA and its major components, including the buffer cache, shared pool, redo log buffer and other memory areas.",
+              "level": "intermediate",
+              "estimatedMinutes": 120,
+              "tags": ["sga", "buffer-cache", "shared-pool", "memory"],
+              "prerequisites": ["ora-arch-001"]
+            },
+            {
+              "id": "ora-arch-004",
+              "sequence": 2,
+              "title": "Understand the Program Global Area",
+              "description": "Explain PGA memory, private SQL areas, work areas and the relationship between PGA and server processes.",
+              "level": "intermediate",
+              "estimatedMinutes": 90,
+              "tags": ["pga", "server-process", "memory"],
+              "prerequisites": ["ora-arch-003"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "oracle-instance-processes",
+      "sequence": 3,
+      "title": "Oracle Instance and Background Processes",
+      "description": "Understand instance startup, shutdown, server processes and essential Oracle background processes.",
+      "topics": [
+        {
+          "id": "instance-management",
+          "sequence": 1,
+          "title": "Instance Management",
+          "objectives": [
+            {
+              "id": "ora-proc-001",
+              "sequence": 1,
+              "title": "Understand Oracle instance startup stages",
+              "description": "Explain NOMOUNT, MOUNT and OPEN stages, the files read at each stage and common startup failures.",
+              "level": "intermediate",
+              "estimatedMinutes": 120,
+              "tags": ["startup", "nomount", "mount", "open"],
+              "prerequisites": ["ora-arch-001", "ora-arch-002"]
+            },
+            {
+              "id": "ora-proc-002",
+              "sequence": 2,
+              "title": "Understand Oracle shutdown modes",
+              "description": "Compare NORMAL, TRANSACTIONAL, IMMEDIATE and ABORT shutdown behavior and their operational implications.",
+              "level": "intermediate",
+              "estimatedMinutes": 90,
+              "tags": ["shutdown", "instance-management", "operations"],
+              "prerequisites": ["ora-proc-001"]
+            }
+          ]
+        },
+        {
+          "id": "background-processes",
+          "sequence": 2,
+          "title": "Background Processes",
+          "objectives": [
+            {
+              "id": "ora-proc-003",
+              "sequence": 1,
+              "title": "Understand essential Oracle background processes",
+              "description": "Explain the roles and interactions of DBWn, LGWR, CKPT, SMON, PMON, ARCn and other important background processes.",
+              "level": "intermediate",
+              "estimatedMinutes": 120,
+              "tags": ["background-processes", "dbwr", "lgwr", "smon", "pmon"],
+              "prerequisites": ["ora-proc-001"]
+            },
+            {
+              "id": "ora-proc-004",
+              "sequence": 2,
+              "title": "Observe Oracle processes using database views and operating-system tools",
+              "description": "Identify Oracle processes through relevant dynamic performance views and operating-system process inspection.",
+              "level": "intermediate",
+              "estimatedMinutes": 90,
+              "tags": ["v-process", "v-session", "linux", "diagnostics"],
+              "prerequisites": ["ora-proc-003"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

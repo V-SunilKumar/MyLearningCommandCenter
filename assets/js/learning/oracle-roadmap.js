@@ -1,261 +1,41 @@
-/* Oracle Roadmap Engine - additive integration for My Learning Command Center V1.7 */
+/* Oracle Roadmap Engine - Interactive lesson prototype.
+ * Preserves roadmap item IDs, progress storage key, notes, filters and navigation.
+ */
 (() => {
   "use strict";
   const DATA_URL = "data/roadmaps/oracle.json";
   const STATE_KEY = "mlcc.oracle.learning-state.v1";
   const $ = (s, r=document) => r.querySelector(s);
   const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-  let roadmap = null;
-  let expandedModules = new Set();
-  let expandedSubs = new Set();
-  let filter = "";
-  let currentItem = null;
-  let roadmapScrollTop = 0;
-  let learningState = loadState();
-
-  function loadState() {
-    try { return JSON.parse(localStorage.getItem(STATE_KEY) || "{}"); }
-    catch { return {}; }
-  }
-  function saveState() {
-    localStorage.setItem(STATE_KEY, JSON.stringify(learningState));
-  }
-  function statusOf(item) { return learningState[item.id] || "not-started"; }
-  function score(status) { return status === "learning" ? 0.5 : (status === "completed" || status === "revisit") ? 1 : 0; }
-  function allItems() { return roadmap.modules.flatMap(m => m.submodules.flatMap(s => s.items)); }
-  function progress(items) {
-    if (!items.length) return 0;
-    return Math.round(items.reduce((n, item) => n + score(statusOf(item)), 0) / items.length * 100);
-  }
-  function statusLabel(status) {
-    return ({ "not-started":"Not started", learning:"Learning", completed:"Completed", revisit:"Revisit" })[status] || "Not started";
-  }
-  function setStatus(id, status) {
-    if (status === "not-started") delete learningState[id];
-    else learningState[id] = status;
-    saveState();
-  }
-  function syncDashboardProgress() {
-    if (!roadmap) return;
-    const items = allItems();
-    const completed = items.filter(item => statusOf(item) === "completed" || statusOf(item) === "revisit").length;
-    const learning = items.filter(item => statusOf(item) === "learning").length;
-    if (typeof window.updateTechnologyProgress === "function") {
-      window.updateTechnologyProgress("oracle", completed, items.length, learning);
-    }
-  }
-  function ensureStyles() {
-    if ($("#oracle-roadmap-css") || $("#oracle-roadmap-style")) return;
-    const link = document.createElement("link");
-    link.id = "oracle-roadmap-style";
-    link.rel = "stylesheet";
-    link.href = "assets/css/learning/oracle-roadmap.css";
-    document.head.appendChild(link);
-  }
-  function showShell(title, body, navigation = {}) {
-    const dashboard = $("#dashboardView"), hero = $("#heroBanner"), view = $("#contentView");
-    if (dashboard) dashboard.classList.add("hidden");
-    if (hero) hero.classList.add("hidden");
-    if (!view) return;
-    view.classList.remove("hidden");
-    const backLabel = navigation.label || "← Dashboard";
-    const backId = navigation.id || "orBackDashboard";
-    view.innerHTML = `<section class="content-card oracle-roadmap-shell">
-      <div class="or-topline">
-        <button class="action-button or-back" id="${backId}" type="button">${esc(backLabel)}</button>
-        <span class="or-kicker">TECHNOLOGY LEARNING PATH</span>
-      </div>
-      <h2>${esc(title)}</h2>${body}</section>`;
-    if (typeof navigation.onBack === "function") {
-      $(`#${backId}`)?.addEventListener("click", navigation.onBack);
-    } else {
-      $(`#${backId}`)?.addEventListener("click", () => { location.hash = "dashboard"; if (typeof window.navigate === "function") window.navigate("dashboard"); });
-    }
-    if (typeof window.setActive === "function") window.setActive("roadmaps");
-  }
-  function moduleItems(module) { return module.submodules.flatMap(s => s.items); }
-  function renderModule(module) {
-    const items = moduleItems(module), pct = progress(items), open = expandedModules.has(module.number);
-    const matchingSubs = module.submodules.map(sub => {
-      const subOpen = expandedSubs.has(sub.number);
-      const filtered = sub.items.filter(item => !filter || item.title.toLowerCase().includes(filter) || sub.title.toLowerCase().includes(filter) || module.title.toLowerCase().includes(filter));
-      if (filter && !filtered.length && !module.title.toLowerCase().includes(filter)) return "";
-      const subPct = progress(sub.items);
-      return `<div class="or-submodule">
-        <button class="or-sub-toggle" data-sub="${esc(sub.number)}" aria-expanded="${subOpen}">
-          <span class="or-chevron ${subOpen ? "is-open" : ""}">›</span>
-          <span class="or-sub-number">${esc(sub.number)}</span>
-          <span class="or-sub-title">${esc(sub.title)}</span>
-          <span class="or-sub-count">${sub.items.length} items</span>
-          <span class="or-mini-progress"><i style="width:${subPct}%"></i></span>
-        </button>
-        ${subOpen ? `<div class="or-items">${filtered.map(item => renderItem(item)).join("") || `<p class="or-empty">No matching study items.</p>`}</div>` : ""}
-      </div>`;
-    }).join("");
-    return `<article class="or-module">
-      <button class="or-module-toggle" data-module="${esc(module.number)}" aria-expanded="${open}">
-        <span class="or-chevron ${open ? "is-open" : ""}">›</span>
-        <span class="or-module-number">${esc(module.number)}</span>
-        <span class="or-module-title">${esc(module.title)}</span>
-        <span class="or-module-meta">${items.filter(i => statusOf(i) === "completed").length}/${items.length} complete</span>
-        <span class="or-module-progress"><i style="width:${pct}%"></i></span>
-      </button>
-      ${open ? `<div class="or-submodules">${matchingSubs}</div>` : ""}
-    </article>`;
-  }
-  function renderItem(item) {
-    const status = statusOf(item);
-    const checked = status === "completed" || status === "revisit";
-    return `<div class="or-study-item">
-      <label class="or-completion-check" title="Mark this study topic complete">
-        <input type="checkbox" data-complete="${esc(item.id)}" ${checked ? "checked" : ""} aria-label="Mark ${esc(item.title)} complete">
-        <span class="or-checkmark" aria-hidden="true"></span>
-      </label>
-      <button class="or-study-open" data-item="${esc(item.id)}" type="button">
-        <span class="or-file-icon">◇</span><span>${esc(item.title)}</span>
-      </button>
-      <button class="or-status or-status-${status}" data-status="${esc(item.id)}" type="button" title="Change learning status">${esc(statusLabel(status))}</button>
-    </div>`;
-  }
-  function renderRoadmap() {
-    if (!roadmap) return;
-    const existingScroller = $("#orScrollRegion");
-    const previousScrollTop = existingScroller ? existingScroller.scrollTop : roadmapScrollTop;
-    const items = allItems(), pct = progress(items);
-    const moduleHtml = roadmap.modules.map(renderModule).join("");
-    const body = `<div class="or-toolbar">
-      <label class="or-search"><span>⌕</span><input id="orFilter" type="search" placeholder="Filter modules, submodules or study items…" value="${esc(filter)}"></label>
-      <div class="or-toolbar-actions">
-        <button class="or-small-button" id="orExpandAll" type="button">Expand all</button>
-        <button class="or-small-button" id="orCollapseAll" type="button">Collapse all</button>
-        <button class="or-small-button" id="orExport" type="button">Export progress</button>
-      </div>
-    </div>
-    <div class="or-scroll-region" id="orScrollRegion" tabindex="0" aria-label="Scrollable Oracle curriculum">
-      <div class="or-module-list">${moduleHtml}</div>
-    </div>
-    <div class="or-footer-note">Oracle Database 19c is the primary lab baseline. Relevant 11g, 12c and newer-release differences will be identified in the study pages.</div>
-    <button class="or-back-top" id="orBackTop" type="button" aria-label="Back to top">↑</button>`;
-    showShell("Oracle Database Roadmap", body);
-    bindRoadmapEvents();
-    const newScroller = $("#orScrollRegion");
-    if (newScroller) {
-      newScroller.scrollTop = previousScrollTop;
-      roadmapScrollTop = previousScrollTop;
-    }
-  }
-  function bindRoadmapEvents() {
-    $("#orFilter")?.addEventListener("input", e => {
-      filter = e.target.value.trim().toLowerCase();
-      if (filter) {
-        roadmap.modules.forEach(m => {
-          if (m.title.toLowerCase().includes(filter)) expandedModules.add(m.number);
-          m.submodules.forEach(s => { if (s.title.toLowerCase().includes(filter) || s.items.some(i => i.title.toLowerCase().includes(filter))) { expandedModules.add(m.number); expandedSubs.add(s.number); } });
-        });
-      }
-      renderRoadmap();
-      const input = $("#orFilter"); if (input) { input.focus(); input.setSelectionRange(filter.length, filter.length); }
-    });
-    document.querySelectorAll("[data-module]").forEach(b => b.addEventListener("click", () => {
-      const id = b.dataset.module; expandedModules.has(id) ? expandedModules.delete(id) : expandedModules.add(id); renderRoadmap();
-    }));
-    document.querySelectorAll("[data-sub]").forEach(b => b.addEventListener("click", () => {
-      const id = b.dataset.sub; expandedSubs.has(id) ? expandedSubs.delete(id) : expandedSubs.add(id); renderRoadmap();
-    }));
-    document.querySelectorAll("[data-item]").forEach(b => b.addEventListener("click", () => {
-      const item = allItems().find(x => x.id === b.dataset.item); if (item) openStudyItem(item);
-    }));
-    document.querySelectorAll("[data-complete]").forEach(box => box.addEventListener("change", () => {
-      const id = box.dataset.complete;
-      setStatus(id, box.checked ? "completed" : "not-started");
-      syncDashboardProgress();
-      renderRoadmap();
-    }));
-    document.querySelectorAll("[data-status]").forEach(b => b.addEventListener("click", () => {
-      const item = allItems().find(x => x.id === b.dataset.status); if (!item) return;
-      const order = ["not-started","learning","completed","revisit"];
-      const next = order[(order.indexOf(statusOf(item)) + 1) % order.length];
-      setStatus(item.id, next); syncDashboardProgress(); renderRoadmap();
-    }));
-    $("#orExpandAll")?.addEventListener("click", () => {
-      roadmap.modules.forEach(m => { expandedModules.add(m.number); m.submodules.forEach(s => expandedSubs.add(s.number)); }); renderRoadmap();
-    });
-    $("#orCollapseAll")?.addEventListener("click", () => { expandedModules.clear(); expandedSubs.clear(); renderRoadmap(); });
-    $("#orExport")?.addEventListener("click", exportProgress);
-    const scroller = $("#orScrollRegion");
-    $("#orBackTop")?.addEventListener("click", () => scroller?.scrollTo({top:0,behavior:"smooth"}));
-    scroller?.addEventListener("scroll", () => { const b=$("#orBackTop"); if (b) b.classList.toggle("is-visible", scroller.scrollTop > 250); });
-  }
-  function openStudyItem(item) {
-    roadmapScrollTop = $("#orScrollRegion")?.scrollTop || 0;
-    currentItem = item;
-    const status = statusOf(item);
-    const body = `<div class="or-study-page">
-      <div class="or-breadcrumb">Oracle Database / ${esc(item.title)}</div>
-      <div class="or-study-header"><span class="or-kicker">ORACLE LEARNING OBJECTIVE</span><span class="or-status or-status-${status}">${esc(statusLabel(status))}</span></div>
-      <h3>${esc(item.title)}</h3>
-      <p class="or-study-intro">This is the dedicated learning page for this Oracle DBA subject. The detailed lesson content, diagrams, commands, hands-on lab, troubleshooting cases and interview questions will be developed here.</p>
-      <div class="or-learning-sections">
-        <section><h4>1. Fundamentals and first principles</h4><p>Explain the concept, terminology, purpose, and the problem this Oracle feature solves.</p></section>
-        <section><h4>2. Internal architecture and how it works</h4><p>Document the components, dependencies, processing flow, background activity and relevant Oracle views.</p></section>
-        <section><h4>3. Implementation and administration</h4><p>Add prerequisites, configuration steps, SQL/SQL*Plus commands, expected outputs and validation checks.</p></section>
-        <section><h4>4. Hands-on laboratory</h4><p>Build a repeatable lab with environment requirements, execution steps, expected results, cleanup and evidence.</p></section>
-        <section><h4>5. Troubleshooting and production scenarios</h4><p>Use Detect → Collect Evidence → Diagnose → Fix Safely → Validate → RCA → Prevent Recurrence.</p></section>
-        <section><h4>6. Specialist knowledge and interview preparation</h4><p>Include advanced behavior, design trade-offs, real production examples and senior DBA / architect questions.</p></section>
-        <section><h4>7. Personal notes and revision</h4><textarea class="or-notes" id="orNotes" placeholder="Your personal learning notes for this subject…">${esc(learningState["note:"+item.id] || "")}</textarea></section>
-      </div>
-      <div class="or-study-actions">
-        <label class="or-status-select">Learning status
-          <select id="orItemStatus">
-            ${["not-started","learning","completed","revisit"].map(s=>`<option value="${s}" ${s===status?"selected":""}>${statusLabel(s)}</option>`).join("")}
-          </select>
-        </label>
-        <button class="action-button" id="orSaveItem">Save status and notes</button>
-      </div>
-    </div>`;
-    showShell("Oracle Study Page", body, {
-      id: "orBackToRoadmapTop",
-      label: "← Back to Oracle roadmap",
-      onBack: renderRoadmap
-    });
-    $("#orSaveItem")?.addEventListener("click", () => {
-      setStatus(item.id, $("#orItemStatus").value);
-      syncDashboardProgress();
-      learningState["note:"+item.id] = $("#orNotes").value;
-      saveState();
-      if (typeof window.toast === "function") window.toast("Study status and notes saved in this browser.");
-      else alert("Study status and notes saved in this browser.");
-    });
-  }
-  function exportProgress() {
-    const payload = {technology:"oracle",exportedAt:new Date().toISOString(),state:learningState};
-    const blob = new Blob([JSON.stringify(payload,null,2)],{type:"application/json"});
-    const a = document.createElement("a"); a.href=URL.createObjectURL(blob); a.download="oracle-roadmap-progress-backup.json"; a.click(); URL.revokeObjectURL(a.href);
-  }
-  async function openOracle() {
-    ensureStyles();
-    try {
-      if (!roadmap) {
-        const response = await fetch(DATA_URL, {cache:"no-cache"});
-        if (!response.ok) throw new Error(`Could not load curriculum (${response.status})`);
-        roadmap = await response.json();
-      }
-      syncDashboardProgress();
-      filter = ""; expandedModules.clear(); expandedSubs.clear(); renderRoadmap();
-      if (location.hash !== "#roadmap/oracle") history.replaceState(null,"","#roadmap/oracle");
-    } catch (error) {
-      showShell("Oracle Database Roadmap", `<div class="or-error"><strong>Unable to load Oracle curriculum.</strong><p>${esc(error.message)}</p><p>Confirm that <code>data/roadmaps/oracle.json</code> is present and that the site is opened through the local web server or GitHub Pages, not directly as a file.</p></div>`);
-    }
-  }
-  // Replace the dashboard's placeholder Oracle destination while leaving every other technology unchanged.
-  const originalOpenTechnology = window.openTechnology;
-  window.openTechnology = function(id) {
-    if (id === "oracle") { openOracle(); return; }
-    if (typeof originalOpenTechnology === "function") return originalOpenTechnology(id);
-  };
-  window.addEventListener("hashchange", () => {
-    if (location.hash === "#roadmap/oracle") openOracle();
-  });
-  // Expose a small API for future roadmap editor and validation work.
-  window.OracleRoadmap = {open:openOracle,getData:()=>roadmap,getState:()=>({...learningState})};
+  let roadmap=null, expandedModules=new Set(), expandedSubs=new Set(), filter="", currentItem=null, roadmapScrollTop=0, learningState=loadState();
+  function loadState(){try{return JSON.parse(localStorage.getItem(STATE_KEY)||"{}");}catch{return {};}}
+  function saveState(){localStorage.setItem(STATE_KEY,JSON.stringify(learningState));}
+  function statusOf(item){return learningState[item.id]||"not-started";}
+  function score(s){return s==="learning"?0.5:(s==="completed"||s==="revisit")?1:0;}
+  function allItems(){return roadmap.modules.flatMap(m=>m.submodules.flatMap(s=>s.items));}
+  function progress(items){return items.length?Math.round(items.reduce((n,i)=>n+score(statusOf(i)),0)/items.length*100):0;}
+  function statusLabel(s){return ({"not-started":"Not started",learning:"Learning",completed:"Completed",revisit:"Revisit"})[s]||"Not started";}
+  function setStatus(id,s){if(s==="not-started")delete learningState[id];else learningState[id]=s;saveState();}
+  function syncDashboardProgress(){if(!roadmap)return;const a=allItems(),c=a.filter(i=>["completed","revisit"].includes(statusOf(i))).length,l=a.filter(i=>statusOf(i)==="learning").length;if(typeof window.updateTechnologyProgress==="function")window.updateTechnologyProgress("oracle",c,a.length,l);}
+  function ensureStyles(){if(!$("#oracle-roadmap-style")){const l=document.createElement("link");l.id="oracle-roadmap-style";l.rel="stylesheet";l.href="assets/css/learning/oracle-roadmap.css";document.head.appendChild(l);}if($("#or-lesson-prototype-css"))return;const st=document.createElement("style");st.id="or-lesson-prototype-css";st.textContent=`
+  .or-study-page{max-width:1180px;margin:0 auto;padding:8px 0 40px;color:var(--text-primary,#eaf4fb)}
+  .or-study-page *{box-sizing:border-box}.or-study-hero{padding:26px clamp(18px,3vw,38px);border:1px solid #21445a;border-radius:18px;background:radial-gradient(circle at 85% 5%,rgba(0,210,190,.14),transparent 32%),linear-gradient(135deg,#071b2a,#0b2638 65%,#09202e);margin:16px 0 22px}
+  .or-study-hero h1{font-size:clamp(27px,4vw,42px);line-height:1.14;margin:10px 0 12px;color:#f4fbff}.or-lesson-meta{display:flex;gap:8px;flex-wrap:wrap}.or-lesson-chip{font-size:12px;padding:6px 10px;border-radius:99px;background:#12364a;color:#a9e9f5;border:1px solid #28536a}.or-study-intro{font-size:16px;line-height:1.8;max-width:900px;color:#d5e7f0;margin:0}.or-lesson-nav{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 24px}.or-lesson-nav a{color:#72e5ed;text-decoration:none;border:1px solid #24485b;border-radius:9px;padding:8px 11px;font-size:13px}.or-lesson-chapter{background:#091f2d;border:1px solid #1d4053;border-radius:14px;padding:clamp(18px,2.5vw,28px);margin:18px 0;scroll-margin-top:20px}.or-lesson-chapter h2{font-size:22px;line-height:1.35;color:#76e4ed;margin:0 0 18px}.or-lesson-chapter h3{font-size:17px;line-height:1.4;color:#d7f4f7;margin:24px 0 10px}.or-lesson-chapter p{font-size:15px;line-height:1.85;color:#d7e5ed;margin:0 0 15px;max-width:100ch;white-space:normal;overflow-wrap:anywhere}.or-lesson-chapter ul,.or-lesson-chapter ol{padding-left:24px;margin:8px 0 18px}.or-lesson-chapter li{font-size:15px;line-height:1.75;color:#d7e5ed;margin:7px 0}.or-lesson-callout{border-left:4px solid #21c8c6;background:#0d3040;padding:15px 17px;border-radius:8px;margin:17px 0 20px}.or-lesson-callout strong{display:block;color:#69e4e3;margin-bottom:7px}.or-lesson-callout p{margin:0}.or-lesson-table-wrap{overflow-x:auto;margin:12px 0 20px}.or-lesson-table{width:100%;border-collapse:collapse;min-width:600px}.or-lesson-table th,.or-lesson-table td{text-align:left;vertical-align:top;padding:12px;border:1px solid #244658;line-height:1.6;font-size:14px}.or-lesson-table th{background:#123448;color:#8de9ec}.or-lesson-table td{color:#d7e5ed}.or-lesson-code{position:relative;margin:12px 0 18px;background:#03131d;border:1px solid #244456;border-radius:10px;overflow:hidden}.or-lesson-code-head{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:#102c3c;color:#8adfe5;font-size:12px}.or-lesson-code pre{margin:0;padding:16px;overflow:auto;white-space:pre;line-height:1.65;color:#d7f2df;font:13px/1.65 Consolas,Monaco,monospace}.or-copy-code{border:1px solid #3a687b;border-radius:6px;background:#12384b;color:#d8faff;padding:5px 9px;cursor:pointer}.or-lesson-steps{counter-reset:lesson-step;list-style:none!important;padding:0!important}.or-lesson-steps li{counter-increment:lesson-step;position:relative;padding:0 0 14px 48px;margin:0 0 14px;border-bottom:1px solid #1b3a4a}.or-lesson-steps li:before{content:counter(lesson-step);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#12475a;color:#76e7ed;font-weight:700}.or-lesson-steps b{display:block;color:#f0fbff;margin-bottom:5px}.or-lesson-diagram{background:#061925;border:1px solid #23495d;border-radius:12px;padding:12px;margin:15px 0 20px;overflow-x:auto}.or-lesson-diagram svg{display:block;width:100%;min-width:650px;height:auto}.or-lab-check{display:grid;grid-template-columns:22px 1fr;gap:10px;padding:11px 0;border-bottom:1px solid #1d3a4a;color:#d8eaf1;line-height:1.6}.or-lab-check input{width:17px;height:17px;margin-top:3px;accent-color:#22c8b9}.or-quiz-card{border:1px solid #285064;border-radius:12px;padding:16px;margin:14px 0;background:#0b2939}.or-quiz-card h4{margin:0 0 12px;color:#f0fbff;font-size:15px;line-height:1.5}.or-quiz-option{display:flex;gap:9px;align-items:flex-start;padding:8px 0;color:#d8e8ef;line-height:1.5}.or-quiz-option input{margin-top:4px;accent-color:#20c9bf}.or-quiz-feedback{padding:10px 12px;border-radius:8px;margin-top:10px;background:#102f3d;color:#d8edf1;line-height:1.6}.or-quiz-submit{background:#087f83;color:white;border:0;border-radius:8px;padding:11px 17px;font-weight:700;cursor:pointer}.or-quiz-score{font-size:18px;color:#7ce7d7;font-weight:700;margin:12px 0}.or-revision-list{display:grid;gap:9px}.or-revision-list label{display:flex;gap:10px;align-items:flex-start;color:#d8e8ef;line-height:1.55}.or-revision-list input{accent-color:#20c9bf;margin-top:4px}.or-study-actions{display:flex;gap:12px;align-items:end;flex-wrap:wrap;margin-top:20px}.or-study-actions select,.or-notes{background:#061a26;color:#e7f4f7;border:1px solid #2b5266;border-radius:8px;padding:10px}.or-notes{width:100%;min-height:150px;line-height:1.7;margin:8px 0 14px}.or-notes-label{display:block;color:#9be7ec;font-weight:700;margin-top:24px}.or-lesson-progress{height:6px;background:#173647;border-radius:10px;overflow:hidden;margin-top:16px}.or-lesson-progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#13b9a9,#73e7db)}
+  @media(max-width:700px){.or-study-hero{padding:20px 16px}.or-lesson-chapter{padding:16px}.or-lesson-chapter h2{font-size:19px}.or-lesson-chapter p,.or-lesson-chapter li{font-size:14px}}
+  `;document.head.appendChild(st);}
+  function showShell(title,body,navigation={}){const dashboard=$("#dashboardView"),hero=$("#heroBanner"),view=$("#contentView");if(dashboard)dashboard.classList.add("hidden");if(hero)hero.classList.add("hidden");if(!view)return;view.classList.remove("hidden");const backLabel=navigation.label||"← Dashboard",backId=navigation.id||"orBackDashboard";view.innerHTML=`<section class="content-card oracle-roadmap-shell"><div class="or-topline"><button class="action-button or-back" id="${backId}" type="button">${esc(backLabel)}</button><span class="or-kicker">TECHNOLOGY LEARNING PATH</span></div><h2>${esc(title)}</h2>${body}</section>`;if(typeof navigation.onBack==="function")$(`#${backId}`)?.addEventListener("click",navigation.onBack);else $(`#${backId}`)?.addEventListener("click",()=>{location.hash="dashboard";if(typeof window.navigate==="function")window.navigate("dashboard");});if(typeof window.setActive==="function")window.setActive("roadmaps");}
+  function moduleItems(m){return m.submodules.flatMap(s=>s.items);}
+  function renderItem(item){const s=statusOf(item),checked=s==="completed"||s==="revisit";return `<div class="or-study-item"><label class="or-completion-check" title="Mark this study topic complete"><input type="checkbox" data-complete="${esc(item.id)}" ${checked?"checked":""} aria-label="Mark ${esc(item.title)} complete"><span class="or-checkmark" aria-hidden="true"></span></label><button class="or-study-open" data-item="${esc(item.id)}" type="button"><span class="or-file-icon">◇</span><span>${esc(item.title)}</span></button><button class="or-status or-status-${s}" data-status="${esc(item.id)}" type="button" title="Change learning status">${esc(statusLabel(s))}</button></div>`;}
+  function renderModule(m){const items=moduleItems(m),pct=progress(items),open=expandedModules.has(m.number);const subs=m.submodules.map(s=>{const subOpen=expandedSubs.has(s.number),filtered=s.items.filter(i=>!filter||i.title.toLowerCase().includes(filter)||s.title.toLowerCase().includes(filter)||m.title.toLowerCase().includes(filter));if(filter&&!filtered.length&&!m.title.toLowerCase().includes(filter))return "";return `<div class="or-submodule"><button class="or-sub-toggle" data-sub="${esc(s.number)}" aria-expanded="${subOpen}"><span class="or-chevron ${subOpen?"is-open":""}">›</span><span class="or-sub-number">${esc(s.number)}</span><span class="or-sub-title">${esc(s.title)}</span><span class="or-sub-count">${s.items.length} items</span><span class="or-mini-progress"><i style="width:${progress(s.items)}%"></i></span></button>${subOpen?`<div class="or-items">${filtered.map(renderItem).join("")||'<p class="or-empty">No matching study items.</p>'}</div>`:""}</div>`;}).join("");return `<article class="or-module"><button class="or-module-toggle" data-module="${esc(m.number)}" aria-expanded="${open}"><span class="or-chevron ${open?"is-open":""}">›</span><span class="or-module-number">${esc(m.number)}</span><span class="or-module-title">${esc(m.title)}</span><span class="or-module-meta">${items.filter(i=>statusOf(i)==="completed").length}/${items.length} complete</span><span class="or-module-progress"><i style="width:${pct}%"></i></span></button>${open?`<div class="or-submodules">${subs}</div>`:""}</article>`;}
+  function renderRoadmap(){if(!roadmap)return;const old=$("#orScrollRegion"),scroll=old?old.scrollTop:roadmapScrollTop,html=roadmap.modules.map(renderModule).join("");const body=`<div class="or-toolbar"><label class="or-search"><span>⌕</span><input id="orFilter" type="search" placeholder="Filter modules, submodules or study items…" value="${esc(filter)}"></label><div class="or-toolbar-actions"><button class="or-small-button" id="orExpandAll" type="button">Expand all</button><button class="or-small-button" id="orCollapseAll" type="button">Collapse all</button><button class="or-small-button" id="orExport" type="button">Export progress</button></div></div><div class="or-scroll-region" id="orScrollRegion" tabindex="0" aria-label="Scrollable Oracle curriculum"><div class="or-module-list">${html}</div></div><div class="or-footer-note">Oracle Database 19c is the primary lab baseline. Check release-specific Oracle documentation before applying commands to other releases.</div><button class="or-back-top" id="orBackTop" type="button" aria-label="Back to top">↑</button>`;showShell("Oracle Database Roadmap",body);bindRoadmapEvents();const sc=$("#orScrollRegion");if(sc){sc.scrollTop=scroll;roadmapScrollTop=scroll;}}
+  function bindRoadmapEvents(){$("#orFilter")?.addEventListener("input",e=>{filter=e.target.value.trim().toLowerCase();if(filter)roadmap.modules.forEach(m=>{if(m.title.toLowerCase().includes(filter))expandedModules.add(m.number);m.submodules.forEach(s=>{if(s.title.toLowerCase().includes(filter)||s.items.some(i=>i.title.toLowerCase().includes(filter))){expandedModules.add(m.number);expandedSubs.add(s.number);}});});renderRoadmap();const i=$("#orFilter");if(i){i.focus();i.setSelectionRange(filter.length,filter.length);}});document.querySelectorAll("[data-module]").forEach(b=>b.addEventListener("click",()=>{const id=b.dataset.module;expandedModules.has(id)?expandedModules.delete(id):expandedModules.add(id);renderRoadmap();}));document.querySelectorAll("[data-sub]").forEach(b=>b.addEventListener("click",()=>{const id=b.dataset.sub;expandedSubs.has(id)?expandedSubs.delete(id):expandedSubs.add(id);renderRoadmap();}));document.querySelectorAll("[data-item]").forEach(b=>b.addEventListener("click",()=>{const i=allItems().find(x=>x.id===b.dataset.item);if(i)openStudyItem(i);}));document.querySelectorAll("[data-complete]").forEach(b=>b.addEventListener("change",()=>{setStatus(b.dataset.complete,b.checked?"completed":"not-started");syncDashboardProgress();renderRoadmap();}));document.querySelectorAll("[data-status]").forEach(b=>b.addEventListener("click",()=>{const i=allItems().find(x=>x.id===b.dataset.status);if(!i)return;const a=["not-started","learning","completed","revisit"];setStatus(i.id,a[(a.indexOf(statusOf(i))+1)%a.length]);syncDashboardProgress();renderRoadmap();}));$("#orExpandAll")?.addEventListener("click",()=>{roadmap.modules.forEach(m=>{expandedModules.add(m.number);m.submodules.forEach(s=>expandedSubs.add(s.number));});renderRoadmap();});$("#orCollapseAll")?.addEventListener("click",()=>{expandedModules.clear();expandedSubs.clear();renderRoadmap();});$("#orExport")?.addEventListener("click",exportProgress);const sc=$("#orScrollRegion");$("#orBackTop")?.addEventListener("click",()=>sc?.scrollTo({top:0,behavior:"smooth"}));sc?.addEventListener("scroll",()=>$("#orBackTop")?.classList.toggle("is-visible",sc.scrollTop>250));}
+  function diagramHtml(name){if(name!=="physical-standby-flow")return "";return `<div class="or-lesson-diagram" role="img" aria-label="Physical standby redo transport and apply architecture"><svg viewBox="0 0 1000 330" xmlns="http://www.w3.org/2000/svg"><defs><marker id="orArrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#55d8d5"/></marker></defs><rect x="20" y="35" width="390" height="255" rx="16" fill="#0d3042" stroke="#39aeb6" stroke-width="2"/><text x="215" y="65" fill="#8cebf0" font-size="20" text-anchor="middle" font-weight="bold">PRIMARY DATABASE</text><rect x="65" y="95" width="300" height="62" rx="9" fill="#16445a" stroke="#5a9db1"/><text x="215" y="120" fill="#f0fbff" font-size="17" text-anchor="middle">User transaction / LGWR</text><text x="215" y="142" fill="#c5e5ee" font-size="13" text-anchor="middle">Redo generated on commit</text><rect x="65" y="190" width="300" height="62" rx="9" fill="#16445a" stroke="#5a9db1"/><text x="215" y="216" fill="#f0fbff" font-size="17" text-anchor="middle">Redo transport</text><text x="215" y="238" fill="#c5e5ee" font-size="13" text-anchor="middle">LNS / ARCn as configured</text><rect x="590" y="35" width="390" height="255" rx="16" fill="#102f2e" stroke="#2dbda9" stroke-width="2"/><text x="785" y="65" fill="#8cebd4" font-size="20" text-anchor="middle" font-weight="bold">PHYSICAL STANDBY</text><rect x="635" y="95" width="300" height="62" rx="9" fill="#155047" stroke="#49b9a1"/><text x="785" y="120" fill="#f0fffb" font-size="17" text-anchor="middle">RFS receives redo</text><text x="785" y="142" fill="#c6eee5" font-size="13" text-anchor="middle">Writes to standby redo logs</text><rect x="635" y="190" width="300" height="62" rx="9" fill="#155047" stroke="#49b9a1"/><text x="785" y="216" fill="#f0fffb" font-size="17" text-anchor="middle">MRP performs Redo Apply</text><text x="785" y="238" fill="#c6eee5" font-size="13" text-anchor="middle">Updates standby datafiles</text><path d="M365 220 C470 220 520 125 635 125" stroke="#55d8d5" stroke-width="4" fill="none" marker-end="url(#orArrow)"/><path d="M785 157 L785 187" stroke="#55d8d5" stroke-width="4" marker-end="url(#orArrow)"/><text x="500" y="95" fill="#a6dbe4" font-size="14" text-anchor="middle">Network transport</text><text x="500" y="275" fill="#8bb3c1" font-size="13" text-anchor="middle">Monitor transport and apply as separate stages</text></svg></div>`;}
+  function blockHtml(b){switch(b.type){case'p':return `<p>${esc(b.text)}</p>`;case'h3':return `<h3>${esc(b.text)}</h3>`;case'ul':return `<ul>${(b.items||[]).map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`;case'callout':return `<aside class="or-lesson-callout"><strong>${esc(b.label||"Important")}</strong><p>${esc(b.text)}</p></aside>`;case'code':return `<div class="or-lesson-code"><div class="or-lesson-code-head"><span>${esc((b.lang||"text").toUpperCase())}</span><button class="or-copy-code" type="button" data-copy-code>Copy code</button></div><pre><code>${esc(b.text)}</code></pre></div>`;case'table':return `<div class="or-lesson-table-wrap"><table class="or-lesson-table"><thead><tr>${b.headers.map(h=>`<th>${esc(h)}</th>`).join("")}</tr></thead><tbody>${b.rows.map(r=>`<tr>${r.map(c=>`<td>${esc(c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;case'steps':return `<ol class="or-lesson-steps">${b.items.map(x=>`<li><b>${esc(x[0])}</b>${esc(x[1])}</li>`).join("")}</ol>`;case'checklist':return `<div class="or-lab-checklist">${b.items.map((x,i)=>`<label class="or-lab-check"><input type="checkbox" data-lab-check="${i}"><span>${esc(x)}</span></label>`).join("")}</div>`;case'diagram':return diagramHtml(b.name);case'quiz':return quizHtml(b.questions);default:return "";}}
+  function quizHtml(questions){return `<div class="or-quiz" data-quiz>${questions.map((q,i)=>`<div class="or-quiz-card" data-question="${i}"><h4>${i+1}. ${esc(q.q)}</h4>${q.options.map((o,j)=>`<label class="or-quiz-option"><input type="radio" name="orq${i}" value="${j}"><span>${esc(o)}</span></label>`).join("")}<div class="or-quiz-feedback" hidden></div></div>`).join("")}<button class="or-quiz-submit" type="button" data-submit-quiz>Check my answers</button><div class="or-quiz-score" data-quiz-score aria-live="polite"></div></div>`;}
+  function lessonContent(lesson){return (lesson.sections||[]).map((s,i)=>`<section class="or-lesson-chapter" id="orChapter${i+1}"><h2>${esc(s.heading)}</h2>${(s.blocks||[]).map(blockHtml).join("")}${s.content?`<p>${esc(s.content).replace(/\\n/g,"<br><br>").replace(/\n/g,"<br><br>")}</p>`:""}</section>`).join("");}
+  function bindLessonEvents(item){document.querySelectorAll("[data-copy-code]").forEach(b=>b.addEventListener("click",async()=>{const text=b.closest(".or-lesson-code")?.querySelector("code")?.textContent||"";try{await navigator.clipboard.writeText(text);b.textContent="Copied";}catch{b.textContent="Select code to copy";}setTimeout(()=>b.textContent="Copy code",1600);}));document.querySelectorAll("[data-submit-quiz]").forEach(b=>b.addEventListener("click",()=>{const root=b.closest("[data-quiz]"),qs=item.lesson.sections.flatMap(s=>(s.blocks||[]).filter(x=>x.type==="quiz").flatMap(x=>x.questions));let score=0;qs.forEach((q,i)=>{const card=root.querySelector(`[data-question="${i}"]`),selected=card.querySelector(`input[name="orq${i}"]:checked`),feedback=card.querySelector(".or-quiz-feedback"),correct=selected&&Number(selected.value)===q.answer;if(correct)score++;feedback.hidden=false;feedback.textContent=(correct?"Correct. ":"Not quite. ")+q.explanation;feedback.style.borderLeft=correct?"3px solid #35c8a8":"3px solid #e2a65c";});root.querySelector("[data-quiz-score]").textContent=`Your score: ${score} / ${qs.length}`;}));}
+  function openStudyItem(item){roadmapScrollTop=$("#orScrollRegion")?.scrollTop||0;currentItem=item;const status=statusOf(item),lesson=item.lesson||{},sections=Array.isArray(lesson.sections)?lesson.sections:[],rich=sections.some(s=>Array.isArray(s.blocks));const nav=rich?`<nav class="or-lesson-nav" aria-label="Chapter navigation">${sections.map((s,i)=>`<a href="#orChapter${i+1}">${esc(s.heading.replace(/^\d+\.\s*/,""))}</a>`).join("")}</nav>`:"";const hero=`<header class="or-study-hero"><div class="or-lesson-meta"><span class="or-lesson-chip">${esc(lesson.level||"Oracle Database 19c")}</span><span class="or-lesson-chip">${esc(lesson.readingTime||"Guided lesson")}</span><span class="or-lesson-chip">${esc(statusLabel(status))}</span></div><h1>${esc(item.title)}</h1><p class="or-study-intro">${esc(lesson.overview||"Study this topic in the context of Oracle Database architecture and operations.")}</p><div class="or-lesson-progress"><span style="width:${status==="completed"?100:status==="learning"?50:0}%"></span></div></header>`;const content=rich?lessonContent(lesson):`<div class="or-learning-sections">${sections.map(s=>`<section class="or-lesson-chapter"><h2>${esc(s.heading)}</h2><p>${esc(s.content||"").replace(/\\n/g,"<br><br>").replace(/\n/g,"<br><br>")}</p></section>`).join("")}</div>`;const checklist=lesson.revisionChecklist?`<section class="or-lesson-chapter"><h2>Final revision checklist</h2><div class="or-revision-list">${lesson.revisionChecklist.map((x,i)=>`<label><input type="checkbox" data-revision="${i}"><span>${esc(x)}</span></label>`).join("")}</div></section>`:"";const body=`<div class="or-study-page"><div class="or-breadcrumb">Oracle Database / Module 22 / ${esc(item.title)}</div>${hero}${nav}${content}${checklist}<label class="or-notes-label" for="orNotes">Your personal learning notes</label><textarea class="or-notes" id="orNotes" placeholder="Record your lab outputs, environment details, observations and revision notes…">${esc(learningState["note:"+item.id]||"")}</textarea><div class="or-study-actions"><label class="or-status-select">Learning status<select id="orItemStatus">${["not-started","learning","completed","revisit"].map(s=>`<option value="${s}" ${s===status?"selected":""}>${statusLabel(s)}</option>`).join("")}</select></label><button class="action-button" id="orSaveItem">Save status and notes</button></div></div>`;showShell("Oracle Study Studio",body,{id:"orBackToRoadmapTop",label:"← Back to Oracle roadmap",onBack:renderRoadmap});bindLessonEvents(item);$("#orSaveItem")?.addEventListener("click",()=>{setStatus(item.id,$("#orItemStatus").value);syncDashboardProgress();learningState["note:"+item.id]=$("#orNotes").value;saveState();if(typeof window.toast==="function")window.toast("Study status and notes saved in this browser.");else alert("Study status and notes saved in this browser.");});}
+  function exportProgress(){const payload={technology:"oracle",exportedAt:new Date().toISOString(),state:learningState};const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="oracle-roadmap-progress-backup.json";a.click();URL.revokeObjectURL(a.href);}
+  async function openOracle(){ensureStyles();try{if(!roadmap){const r=await fetch(DATA_URL,{cache:"no-cache"});if(!r.ok)throw new Error(`Could not load curriculum (${r.status})`);roadmap=await r.json();}syncDashboardProgress();filter="";expandedModules.clear();expandedSubs.clear();renderRoadmap();if(location.hash!=="#roadmap/oracle")history.replaceState(null,"","#roadmap/oracle");}catch(e){showShell("Oracle Database Roadmap",`<div class="or-error"><strong>Unable to load Oracle curriculum.</strong><p>${esc(e.message)}</p><p>Confirm data/roadmaps/oracle.json exists and open the site through the local web server.</p></div>`);}}
+  const original=window.openTechnology;window.openTechnology=function(id){if(id==="oracle"){openOracle();return;}if(typeof original==="function")return original(id);};window.addEventListener("hashchange",()=>{if(location.hash==="#roadmap/oracle")openOracle();});window.OracleRoadmap={open:openOracle,getData:()=>roadmap,getState:()=>({...learningState})};
 })();

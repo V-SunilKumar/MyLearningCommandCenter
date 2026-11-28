@@ -101,3 +101,12 @@
     min-height: 0;
     height: 100%;
 }
+
+/* V7: Full-width single-column Oracle study sections */
+.or-learning-sections {
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.or-study-intro {
+    max-width: none;
+}
