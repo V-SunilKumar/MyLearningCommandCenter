@@ -1,0 +1,19 @@
+﻿# Dependencies and generated files
+node_modules/
+npm-debug.log*
+*.log
+
+# Local backups - preserve locally, do not publish
+/backups/
+*.backup-*
+*.pre-ai
+
+# Root-level historical exports and backups
+/index.html.backup-*
+/module-22-export.json
+/oracle-roadmap-js-export.txt
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
