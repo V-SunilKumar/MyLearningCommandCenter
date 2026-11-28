@@ -12,7 +12,7 @@ const TECHNOLOGIES = [
   {id:'kubernetes',name:'Kubernetes',group:'cloud',logo:'kubernetes',logoFile:'kubernetes.svg',color:'#326CE5',completed:0,total:0,pct:0,fill:'#078ff0'},
   {id:'linux',name:'Linux',group:'tools',logo:'linux',logoFile:'linux.svg',color:'#FCC624',completed:0,total:0,pct:0,fill:'#e5d400'},
   {id:'shell',name:'Shell Scripting',group:'tools',logo:'gnubash',color:'#FFFFFF',completed:0,total:0,pct:0,fill:'#54c8f5'},
-  {id:'powershell',name:'PowerShell',group:'tools',logo:'powershell',logoFile:'powershell-mark.svg',color:'#5391FE',completed:0,total:0,pct:0,fill:'#54c8f5'},
+  {id:'ai',name:'AI',group:'tools',logo:'ai',logoFile:'ai-processor.png',color:'#6574FF',completed:0,total:0,pct:0,fill:'#38DFFF'},
   {id:'python',name:'Python',group:'tools',logo:'python',logoFile:'python-mark.svg',color:'#FFD43B',completed:0,total:0,pct:0,fill:'#e5d400'},
   {id:'git',name:'Git',group:'tools',logo:'git',logoFile:'git.svg',color:'#F05032',completed:0,total:0,pct:0,fill:'#ff4b3e'},
   {id:'terraform',name:'Terraform',group:'tools',logo:'terraform',logoFile:'terraform.svg',color:'#844FBA',completed:0,total:0,pct:0,fill:'#c02bea'},
