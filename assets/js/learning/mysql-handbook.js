@@ -1,4 +1,4 @@
-
+﻿
 /* MySQL / MariaDB Handbook — dynamic Markdown pages, additive to MLCC */
 (() => {
   "use strict";
@@ -118,7 +118,7 @@
     if(location.hash!==`#mysql/${id}`)history.replaceState(null,"",`#mysql/${id}`);
     try{
       const md=await loadPage(item.file);
-      doc.innerHTML=`<div class="mysql-source-note">PERSONAL TECHNICAL HANDBOOK · SOURCE PAGES ${item.sourcePages.join(", ")}</div>${renderMarkdown(md)}`;
+            doc.innerHTML=`<div class="mysql-source-note">PERSONAL TECHNICAL HANDBOOK</div>${renderMarkdown(md)}`;
       doc.querySelectorAll("pre").forEach(pre=>{
         const btn=document.createElement("button");btn.type="button";btn.textContent="Copy";
         btn.style.cssText="float:right;margin:0 0 8px 8px;padding:4px 8px;border:1px solid #49617b;border-radius:5px;background:#142b40;color:#dbeafa;cursor:pointer;font-size:10px";
@@ -156,3 +156,4 @@
   window.MySQLHandbook={open:openMysql,getNavigation:()=>nav};
   if(location.hash==="#roadmap/mysql"||location.hash.startsWith("#mysql/"))openMysql();
 })();
+
