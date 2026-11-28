@@ -1,0 +1,462 @@
+{
+  "technologyId": "mysql",
+  "technologyName": "MySQL / MariaDB",
+  "title": "MySQL & MariaDB Technical Handbook",
+  "description": "Personal technical notes, lab commands, outputs and operational experience, converted from the supplied OneNote PDF.",
+  "source": "MySql_Notes.pdf (79 pages)",
+  "modules": [
+    {
+      "id": "installation",
+      "number": "01",
+      "title": "Installation",
+      "topics": [
+        {
+          "id": "rpm-installation",
+          "title": "RPM package installation",
+          "file": "installation/rpm-installation.md",
+          "sourcePages": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "id": "service-and-directory-configuration",
+          "title": "Service and directory configuration",
+          "file": "installation/service-and-directory-configuration.md",
+          "sourcePages": [
+            7,
+            8,
+            9
+          ]
+        },
+        {
+          "id": "installation-troubleshooting",
+          "title": "Installation troubleshooting and SELinux",
+          "file": "installation/installation-troubleshooting.md",
+          "sourcePages": [
+            9,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "id": "database-creation",
+      "number": "02",
+      "title": "Database Creation",
+      "topics": [
+        {
+          "id": "database-creation-and-management",
+          "title": "Database creation and management",
+          "file": "database-creation/database-creation-and-management.md",
+          "sourcePages": [
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        }
+      ]
+    },
+    {
+      "id": "configuration",
+      "number": "03",
+      "title": "Configuration Parameters",
+      "topics": [
+        {
+          "id": "mysql-configuration-parameters",
+          "title": "MySQL configuration parameters",
+          "file": "configuration/mysql-configuration-parameters.md",
+          "sourcePages": [
+            3,
+            4,
+            5,
+            7,
+            8
+          ]
+        },
+        {
+          "id": "online-and-persistent-parameters",
+          "title": "Changing and persisting parameters",
+          "file": "configuration/online-and-persistent-parameters.md",
+          "sourcePages": [
+            21,
+            22,
+            34
+          ]
+        }
+      ]
+    },
+    {
+      "id": "architecture",
+      "number": "04",
+      "title": "Architecture and Storage Engines",
+      "topics": [
+        {
+          "id": "mysql-architecture-overview",
+          "title": "MySQL architecture overview",
+          "file": "architecture/mysql-architecture-overview.md",
+          "sourcePages": [
+            19
+          ]
+        },
+        {
+          "id": "sql-statement-processing",
+          "title": "SQL statement processing",
+          "file": "architecture/sql-statement-processing.md",
+          "sourcePages": [
+            25,
+            26
+          ]
+        },
+        {
+          "id": "storage-engines",
+          "title": "Storage engines",
+          "file": "architecture/storage-engines.md",
+          "sourcePages": [
+            20,
+            21,
+            22,
+            23,
+            24,
+            50,
+            51,
+            52
+          ]
+        }
+      ]
+    },
+    {
+      "id": "binary-logs",
+      "number": "05",
+      "title": "Binary Logs",
+      "topics": [
+        {
+          "id": "binary-log-fundamentals",
+          "title": "Binary log fundamentals",
+          "file": "binary-logs/binary-log-fundamentals.md",
+          "sourcePages": [
+            16,
+            18,
+            59,
+            62
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tables-data-types",
+      "number": "06",
+      "title": "Tables and Data Types",
+      "topics": [
+        {
+          "id": "mysql-language-extensions",
+          "title": "MySQL language extensions and deviations",
+          "file": "tables-data-types/mysql-language-extensions.md",
+          "sourcePages": [
+            27,
+            28,
+            29,
+            30
+          ]
+        },
+        {
+          "id": "data-types-and-sql-modes",
+          "title": "Data types, character sets and SQL modes",
+          "file": "tables-data-types/data-types-and-sql-modes.md",
+          "sourcePages": [
+            31,
+            32,
+            33,
+            34
+          ]
+        }
+      ]
+    },
+    {
+      "id": "indexes",
+      "number": "07",
+      "title": "Indexes and Constraints",
+      "topics": [
+        {
+          "id": "indexes-and-constraints",
+          "title": "Indexes and constraints",
+          "file": "indexes/indexes-and-constraints.md",
+          "sourcePages": [
+            35,
+            36,
+            37,
+            38
+          ]
+        }
+      ]
+    },
+    {
+      "id": "views",
+      "number": "08",
+      "title": "Views",
+      "topics": [
+        {
+          "id": "views-and-view-options",
+          "title": "Views and view options",
+          "file": "views/views-and-view-options.md",
+          "sourcePages": [
+            39,
+            40
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stored-routines",
+      "number": "09",
+      "title": "Stored Routines, Triggers, Cursors and Events",
+      "topics": [
+        {
+          "id": "triggers-routines-cursors-events",
+          "title": "Triggers, stored routines, cursors and events",
+          "file": "stored-routines/triggers-routines-cursors-events.md",
+          "sourcePages": [
+            43,
+            44,
+            45,
+            46
+          ]
+        }
+      ]
+    },
+    {
+      "id": "transactions",
+      "number": "10",
+      "title": "Transactions",
+      "topics": [
+        {
+          "id": "acid-isolation-locking",
+          "title": "ACID, isolation levels and locking",
+          "file": "transactions/acid-isolation-locking.md",
+          "sourcePages": [
+            47,
+            48,
+            49,
+            50
+          ]
+        }
+      ]
+    },
+    {
+      "id": "users-roles",
+      "number": "11",
+      "title": "Users, Roles and Privileges",
+      "topics": [
+        {
+          "id": "user-and-role-management",
+          "title": "User and role management",
+          "file": "users-roles/user-and-role-management.md",
+          "sourcePages": [
+            16,
+            17,
+            18,
+            41,
+            42
+          ]
+        },
+        {
+          "id": "access-control-and-account-troubleshooting",
+          "title": "Access control and account troubleshooting",
+          "file": "users-roles/access-control-and-account-troubleshooting.md",
+          "sourcePages": [
+            53,
+            54,
+            55,
+            56,
+            57
+          ]
+        }
+      ]
+    },
+    {
+      "id": "monitoring",
+      "number": "12",
+      "title": "Command Line Monitoring",
+      "topics": [
+        {
+          "id": "mysql-command-reference",
+          "title": "MySQL command-line reference",
+          "file": "monitoring/mysql-command-reference.md",
+          "sourcePages": [
+            16,
+            17,
+            18
+          ]
+        },
+        {
+          "id": "monitoring-and-configuration-inspection",
+          "title": "Monitoring and configuration inspection",
+          "file": "monitoring/monitoring-and-configuration-inspection.md",
+          "sourcePages": [
+            58,
+            59
+          ]
+        }
+      ]
+    },
+    {
+      "id": "backup-recovery",
+      "number": "13",
+      "title": "Backup and Recovery",
+      "topics": [
+        {
+          "id": "backup-strategy-and-types",
+          "title": "Backup strategy and backup types",
+          "file": "backup-recovery/backup-strategy-and-types.md",
+          "sourcePages": [
+            60
+          ]
+        },
+        {
+          "id": "logical-and-physical-backups",
+          "title": "Logical and physical backups",
+          "file": "backup-recovery/logical-and-physical-backups.md",
+          "sourcePages": [
+            61
+          ]
+        },
+        {
+          "id": "crash-recovery-and-point-in-time-recovery",
+          "title": "Crash recovery and point-in-time recovery",
+          "file": "backup-recovery/crash-recovery-and-point-in-time-recovery.md",
+          "sourcePages": [
+            62,
+            63
+          ]
+        }
+      ]
+    },
+    {
+      "id": "partitioning",
+      "number": "14",
+      "title": "Partitioning",
+      "topics": [
+        {
+          "id": "partitioning-types-and-examples",
+          "title": "Partitioning types and examples",
+          "file": "partitioning/partitioning-types-and-examples.md",
+          "sourcePages": [
+            64,
+            65
+          ]
+        }
+      ]
+    },
+    {
+      "id": "replication",
+      "number": "15",
+      "title": "Replication and High Availability",
+      "topics": [
+        {
+          "id": "replication-fundamentals-and-configuration",
+          "title": "Replication fundamentals and configuration",
+          "file": "replication/replication-fundamentals-and-configuration.md",
+          "sourcePages": [
+            66,
+            67
+          ]
+        },
+        {
+          "id": "replication-administration-and-troubleshooting",
+          "title": "Replication administration, GTID and troubleshooting",
+          "file": "replication/replication-administration-and-troubleshooting.md",
+          "sourcePages": [
+            68,
+            75,
+            76,
+            77,
+            78
+          ]
+        },
+        {
+          "id": "innodb-cluster-operations",
+          "title": "InnoDB Cluster and day-to-day operations",
+          "file": "replication/innodb-cluster-operations.md",
+          "sourcePages": [
+            79
+          ]
+        }
+      ]
+    },
+    {
+      "id": "performance",
+      "number": "16",
+      "title": "Performance Tuning",
+      "topics": [
+        {
+          "id": "performance-factors-and-benchmarking",
+          "title": "Performance factors and benchmarking",
+          "file": "performance/performance-factors-and-benchmarking.md",
+          "sourcePages": [
+            69,
+            70,
+            71
+          ]
+        }
+      ]
+    },
+    {
+      "id": "security",
+      "number": "17",
+      "title": "Security",
+      "topics": [
+        {
+          "id": "privileges-and-security-fundamentals",
+          "title": "Privileges and security fundamentals",
+          "file": "security/privileges-and-security-fundamentals.md",
+          "sourcePages": [
+            72,
+            73,
+            74
+          ]
+        }
+      ]
+    },
+    {
+      "id": "migration",
+      "number": "18",
+      "title": "Migration Considerations",
+      "topics": [
+        {
+          "id": "migration-checks-and-replication-consistency",
+          "title": "Migration checks and replication consistency",
+          "file": "migration/migration-checks-and-replication-consistency.md",
+          "sourcePages": [
+            75,
+            76,
+            77,
+            78
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scripts-automation",
+      "number": "19",
+      "title": "Scripts and Automation",
+      "topics": [
+        {
+          "id": "script-library",
+          "title": "Script Library",
+          "file": "scripts-automation/script-library.md",
+          "sourcePages": []
+        }
+      ]
+    }
+  ],
+  "overview": {
+    "title": "Handbook Overview",
+    "file": "overview.md"
+  }
+}
